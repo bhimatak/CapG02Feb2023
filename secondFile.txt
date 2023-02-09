@@ -1,2 +1,2 @@
 This is my second file which is created using cloud and needs to be synced with the local repo.
-this can be done by using git pull
+this can be done by using git pull origin main
