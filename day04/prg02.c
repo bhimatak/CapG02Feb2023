@@ -35,11 +35,12 @@ int main()
 	printf("\nui=%u",&c);
 
 	*/
-	int i;
-	float f;
+	int i,a,b;
+	float f=10.11;
 	double d;
 	char c;
 
+	/*
 	scanf("%c",&c);
 	scanf("%d",&i);
 	scanf("%f",&f);
@@ -50,7 +51,22 @@ int main()
 	printf("\nf=%f",f);
 	printf("\nd=%lf",d);
 	printf("\nc=%c Ascii value=%d",c,c);
+	*/
 
+	//scanf("%d%f%lf %c",&i,&f,&d,&c);
+
+	//printf("\ni=%d\ta=%d\tb=%d\n",i,a,b);
+
+	//scanf("%3d",&i);
+	// scanf("%f",&f);
+	// scanf("%lf",&d);
+	// scanf(" ");
+	// scanf("%c",&c);
+	printf("\n%d",printf("Hello Bhima"),f);
+	//printf("\ni=%05d",i);
+	// printf("\nf=%f",f);
+	// printf("\nd=%lf",d);
+	// printf("\nc=%c Ascii value=%d",c,c);
 
 	printf("\n\n");
 
