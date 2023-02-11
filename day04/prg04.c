@@ -9,11 +9,19 @@ int main()
 
 	//strcpy(str,"This is a test");
 
-	fgets(str, 1024, stdin);
+	fgets(str, 98, stdin);
 
 	len = strlen(str);
 
-	printf("\n%s and its length=%d",str,len);
+	puts(str);
+
+	fgets(str, 98, stdin);
+
+	//len = strlen(str);
+
+	puts(str);
+
+	//printf("\n%s and its length=%d",str,len);
 
 	printf("\nstr[0]=%c \t str[1]=%c \n",str[0],str[1]);
 	printf("\nstr[strlen-1]=%c and its ascii value=%d", str[len-1], str[len-1]);
