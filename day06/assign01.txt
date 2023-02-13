@@ -1,0 +1,13 @@
+1. find if the gnum is prime
+2. to find the product and sum of given number
+
+gnum = 1234
+
+sum = 10
+prod = 24
+
+
+gnum = 12034
+
+sum = 10
+prod = 24
