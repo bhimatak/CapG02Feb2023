@@ -60,3 +60,13 @@ Input:
 4324
 Output: 
 No
+
+
+
+
+Q) Find unique digits in a given number
+
+ex: gnum = 4324
+
+o/p 3,2
+
