@@ -19,6 +19,16 @@ int main()
 		count++;
 	}
 
+	/*count = 1;
+
+	while(count<=10)
+	{
+		printf("\n2nd Count=%d", count);
+		//count += 1;
+		//count = count + 1;
+		count++;
+	}
+	*/
 	printf("\nCount=%d (After While loop)", count);
 		
 	printf("\nBye\n");
