@@ -17,9 +17,7 @@ prod = 24
 Q)  Write a program to Count number of ways to divide a number
  in 4 parts.
 
- Input Format:
- First Line Of Input Contains T test cases
- Second line of Input Contains a positive integer n,
+ 
 
  Output Format:
  Print the count number of ways for divison can take place.
@@ -27,13 +25,13 @@ Q)  Write a program to Count number of ways to divide a number
  Examples :
 
  Input:
- 1
+ 5
    5 => 1 + 1 + 1 + 2
 
  Output: 1
 
  Input:
- 1
+ 
  6
    2 + 2 + 1 + 1
    1 + 1 + 1 + 3
