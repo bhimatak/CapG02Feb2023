@@ -1,0 +1,36 @@
+
+Control statements
+
+1. branching sts
+	a. if
+	b. if else
+	c. else if ladder
+	d. nested if else
+	e. switch
+
+2. looping sts
+	a. entry controlled looping st
+		i.  while
+		ii. for
+	b. exit controlled
+		i. do while (FTO)
+
+
+	in any looping sts, we need these steps
+
+	1. counter
+	2. sts to be executed in that loop/block
+	3. condition
+	4. initialisation of the counter
+
+a. entry controlled looping st
+		i.  while
+
+		Syntax:
+
+			while(cond)
+			{
+				while block sts
+			}
+
+		ii. 
