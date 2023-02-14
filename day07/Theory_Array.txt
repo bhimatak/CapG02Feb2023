@@ -42,3 +42,38 @@ printf("\n%d",RollNo[4]);
 RollNo[49] = 10101;
 
 RollNo[999] 
+
+
+1. one dimension
+2. two / multi
+
+following are type of array,
+
+1. static array
+	: size of the array is know before to the execution time/ @ the time of coding
+
+2. dynamic array
+	: size of array is known/set at the time of run time/execution time
+		sys. libs called malloc, calloc, realloc => DMA
+
+3. stretchable array
+	: size of the array is shrinked/extended @ run time
+		sys libs: malloc, calloc, realloc
+
+4. mutable array
+	: size of the array is known/alloted between link and build time.
+	it resembles like a static
+
+
+tips/tricks
+			0,1,2,3,4
+int a[5] = {1,2,3,4,5};
+
+printf("\n%d", a[2]);
+
+printf("\n%d",a[a[1]]);
+
+printf("\n%d %d",a[2],3[a]);
+
+
+

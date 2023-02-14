@@ -1,0 +1,57 @@
+Q. Check whether a given number can be expressed as the sum of two prime number
+
+i/p
+Enter a positive integer: 34
+Output
+34 = 3 + 31
+
+34 = 5 + 29
+34 = 11 + 23
+34 = 17 + 17
+NoofWays = 4
+
+Q. Reverse a given array of elements
+
+Q. rotate array every kth element
+
+1 2 3 4 5 6 7 8 9
+
+k= 3
+
+3 2 1 6 5 4 9 8 7
+
+
+
+Q. alternativel merge two strings
+i/p
+Bhima
+ABCDEOLM
+o/p
+BAhBiCmDaEOLM
+
+
+
+Q. Problem Statement:
+Given an array A of N positive numbers. The task is to find the position 
+where equilibrium first occurs in the array. Equilibrium position in an array is a position such that the sum of elements before it is equal to the sum of   elements after it.
+
+Input Format:
+The first line contains an integer, denoting the size of the array. 
+The second line contains integers denoting the elements 
+of the array.
+
+Constraints
+1<= n<=100
+
+1<=arr<= 1000, where arr is the ith element of the array.
+
+Output Format:
+The output line contains integer denoting an equilibrium
+index (if any) or -1 (if no equilibrium indexes exist).
+
+TESTCASE 1:
+Input:
+7
+[-7, 1, 5, 2, -4, 3, 0]
+Output: 
+3
