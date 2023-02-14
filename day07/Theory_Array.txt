@@ -1,0 +1,44 @@
+
+
+Array 
+
+- storing homogenious data elements/value used for particular purpose
+- elements are stored in consective mem address
+- identified by binary unix operator - []
+- elements starts from 0th index to size-1 
+- each elements are identified by their own index values
+
+syntax:
+
+	declaration of arrays:
+
+		dataType identifierName[Size of the array];
+
+	to access data elements/members of the array:
+
+		identifierName[index value];
+
+
+				 0,1,2
+int RollNo[4] = {1,2,3}; //dec with initialisation
+
+int Test[4] = {1};
+
+int t1[]; x
+
+
+
+
+printf("\n%d",Test[3]);
+
+
+
+RollNo[2] = 44;
+
+printf("\n%d",RollNo[4]);
+
+
+
+RollNo[49] = 10101;
+
+RollNo[999] 
