@@ -9,12 +9,13 @@ int main()
 	int arr[A_SIZE];
 
 	int iValue = 0, value;
-	
+	/*
+	// to store array elements
 	for(iValue = 0,value=10;iValue < A_SIZE;iValue++, value += 10)
 	{
 		arr[iValue] = value ;
 	}
-	
+	*/
 	/*arr[0] = 10;
 	arr[1] = 20;
 	arr[2] = 30;
@@ -23,6 +24,13 @@ int main()
 	*/
 
 
+	for(iValue = 0;iValue < A_SIZE;iValue++)
+	{
+		printf("\nEnter %dth value of array: ", iValue+1); 
+		scanf("%d",&arr[iValue]);
+	}
+
+	// access the array elements 
 	printf("\n1st element in array a[0] = %d",arr[0]);
 	printf("\n2nd element in array a[1] = %d",arr[1]);
 	printf("\n3rd element in array a[2] = %d",arr[2]);
