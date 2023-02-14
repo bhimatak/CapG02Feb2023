@@ -1,0 +1,15 @@
+Q. store odd number and even numbers in an array between 25-125
+
+cond: 1st half of the array should contain only even values
+	  2nd half of the array should contain only odd values
+
+ex:
+
+	int arr[6];
+
+	arr[0] = 26
+	arr[1] = 28
+	arr[2] = 30
+	arr[3] = 25
+	arr[4] = 27
+	arr[5] = 29
