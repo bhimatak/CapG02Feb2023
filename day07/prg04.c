@@ -5,6 +5,7 @@ int main()
 	char ch = '\0';
 	int it=0;
 	char str[27];
+
 	int sArr = 0;
 
 	do

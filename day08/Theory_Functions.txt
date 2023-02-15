@@ -1,0 +1,37 @@
+ Functions
+
+Syntax:
+	decalration: (prototyping)
+
+	return_datatype fName(datatype input_parameters);
+
+	defination:
+
+	return_datatype fName(dataType ipParameters)
+	{
+		block of sts for this particular task
+
+		return (dt);
+	}
+
+
+	calling:
+		asking to execute / make an action
+		fname(ipParameters);
+
+
+functions define 3 ways:
+
+1. fuction with return type and no ip paramters
+2. function with no return type (void) and with input parameters
+3. functions with return type and with ip paramters
+
+
+1. int fName();
+
+2. void fName(int, int);
+
+3. int fName(int, int);
+
+
+
