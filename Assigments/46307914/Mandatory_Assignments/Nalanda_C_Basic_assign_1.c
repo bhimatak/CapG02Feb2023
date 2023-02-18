@@ -23,7 +23,7 @@ int main()
 	
 	printf("\n\nThe sum of maximum and minimum elements in the array is : %d\n\n",sum);
 	
-	printf("\nEnter the element to count the occurences: ");
+	printf("Enter the element to count the occurences: ");
 	scanf("%d",&n);
 	
 	count=mycount(arr1,n,ea);
@@ -41,6 +41,7 @@ int main()
 int array_input(int arr1[], int arr_si, int ma_si)
 {
 	int i;
+
 	printf("\nEnter the elements:\n");
 
 	for(i=0;i<arr_si;i++)
@@ -61,16 +62,20 @@ int array_input(int arr1[], int arr_si, int ma_si)
 void array_display(int arr1[],int ds)
 {
 	int i;
+
 	for(i=0;i<ds;i++)
 	{
 		printf("\n%d",arr1[i]);
 	}
+
 	printf("\n\n");
+
 }
 
 int sum_of_max_and_min(int arr1[],int s)
 {
 	int max=arr1[0],min=arr1[0],i;
+
 	for(i=0;i<s;i++)
 	{
 		if(max<arr1[i])
@@ -86,6 +91,7 @@ int sum_of_max_and_min(int arr1[],int s)
 int mycount(int arr1[],int n, int s)
 {
 	int i,j=0;
+
 	for(i=0;i<s;i++)
 	{
 		if(arr1[i]==n)
@@ -108,6 +114,7 @@ void myrev(int arr1[],int ms)
 		arr1[i]=arr1[j];
 		arr1[j]=temp;
 	}
+
 	for(i=0;i<ms;i++)
 	{
 		printf("%d  ",arr1[i]);
