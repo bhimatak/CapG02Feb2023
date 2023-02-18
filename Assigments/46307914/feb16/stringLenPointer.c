@@ -9,8 +9,8 @@ int main()
 	ptr=name;
 
 	printf("\n\nEnter your name: ");
+	//scanf("%[^\n]",ptr);
 	scanf("%s",ptr);
-
 	lenWithPointer(name);
 
 	return 0;
