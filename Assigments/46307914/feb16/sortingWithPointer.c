@@ -1,10 +1,24 @@
 #include<stdio.h>
 
+int inputFunc(int[]);
 void descSort(int[],int);
 
 int main()
 {
 	int arr[30];
+	int n;
+
+	n=inputFunc(arr);
+
+	descSort(arr,n);
+
+	return 0;
+
+}
+
+int inputFunc(int arr[])
+{
+	
 	int *ptr;
 	int n,it;
 
@@ -18,9 +32,7 @@ int main()
 		scanf("%d",(ptr+it));
 	}
 
-	descSort(arr,n);
-
-	return 0;
+	return n;
 }
 
 void descSort(int arrt[],int n2)
@@ -41,8 +53,13 @@ void descSort(int arrt[],int n2)
 			}
 		}
 	}
+
+	printf("\n\n");
+
 	for(i=0;i<n2;i++)
 	{
 		printf("%d\t",*(ptr2+i));
 	}
+
+	printf("\n\n");
 }
