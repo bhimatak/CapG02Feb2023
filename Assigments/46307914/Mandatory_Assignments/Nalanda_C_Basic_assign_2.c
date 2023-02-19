@@ -47,7 +47,7 @@ int word_count(char str[])
 
 	printf("\n");
 
-	for(i=0;str[i]!= '\0';i++)
+	for(i=0;str[i]!= '\n';i++)
 	{
 		if(str[i]!=' ')
 		{
@@ -71,7 +71,7 @@ void single_line_wspace(char str[])
 
 	printf("\n\n");
 
-	for(i=0;str[i]!='\0';i++)
+	for(i=0;str[i]!='\n';i++)
 	{
 		if(str[i] == ' ')
 			continue;
@@ -88,7 +88,7 @@ int replacews(char str[], char rep)
 {
 	int i=0,count=0;
 
-	for(i=0;str[i]!='\0';i++)
+	for(i=0;str[i]!='\n';i++)
 	{
 		if(str[i]==' ')
 		{
@@ -103,9 +103,9 @@ int replacews(char str[], char rep)
 
 int long_word(char str[])
 {
-	int ll=0,length=0,max=0,i=0,j=0;
+	int length=0,max=0,i=0,j=0;
 
-	for(i=0;str[i]!='\0';i++)
+	for(i=0;str[i]!='\n';i++)
 	{
 		if(str[i]!=' ')
 		{
@@ -122,7 +122,7 @@ int long_word(char str[])
 
 			length=0;
 		}
-		
+				
 	}
 
 	if(length>max)
@@ -132,6 +132,7 @@ int long_word(char str[])
 	}
 	
 	printf("\n\nThe longest word is ");
+
 
 	for(i=0;i<max ;i++)
 		printf("%c",str[j+i]);
