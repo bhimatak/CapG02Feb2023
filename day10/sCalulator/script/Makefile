@@ -8,22 +8,24 @@ INC = ./inc/
 
 IFLAGS = -I $(INC) 
 
-$(BIN)/sCalc: $(OBJ)/prg01.o $(OBJ)/sum.o $(OBJ)/multi.o $(OBJ)/disp.o
+$(BIN)/sCalc: prg01.o sum.o multi.o disp.o
+	@echo "Bulding sCalc Application"
 	$(CC) $(LDFLAGS) $(BIN)/sCalc $(OBJ)/prg01.o $(OBJ)/sum.o $(OBJ)/multi.o $(OBJ)/disp.o
+	@echo "Built sCalc Application"
 
-$(OBJ)/prg01.o: $(SRC)/prg01.c
+prg01.o: $(SRC)/prg01.c
 	$(CC) $(CFLAGS) $(SRC)/prg01.c $(IFLAGS)
 	mv prg01.o $(OBJ)/ 
 
-$(OBJ)/sum.o: $(SRC)/sum.c
+sum.o: $(SRC)/sum.c
 	$(CC) $(CFLAGS) $(SRC)/sum.c $(IFLAGS)
 	mv sum.o $(OBJ)/ 
 
-$(OBJ)/multi.o: $(SRC)/multi.c
+multi.o: $(SRC)/multi.c
 	$(CC) $(CFLAGS) $(SRC)/multi.c $(IFLAGS)
 	mv multi.o $(OBJ)/ 
 
-$(OBJ)/disp.o: $(SRC)/disp.c
+disp.o: $(SRC)/disp.c
 	$(CC) $(CFLAGS) $(SRC)/disp.c $(IFLAGS)
 	mv disp.o $(OBJ)/ 
 
