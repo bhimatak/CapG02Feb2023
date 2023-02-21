@@ -1,6 +1,8 @@
-#include <myHeader.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <sum.h>
+#include <multi.h>
+#include <disp.h>
 
 
 int main()
