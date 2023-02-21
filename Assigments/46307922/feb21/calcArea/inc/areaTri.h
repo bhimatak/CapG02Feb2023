@@ -1,0 +1,1 @@
+int areaTri(int,int);
