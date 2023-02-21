@@ -1,28 +1,35 @@
 CC = gcc
 CFLAGS = -Wall -c -g
+LDFLAGS = -o
+OBJ = ./obj
+SRC = ./src
+BIN = ./bin
+INC = ./inc/
 
-./bin/sCalc: ./obj/prg01.o ./obj/sum.o ./obj/multi.o ./obj/disp.o
-	gcc -o ./bin/sCalc ./obj/prg01.o ./obj/sum.o ./obj/multi.o ./obj/disp.o
+IFLAGS = -I $(INC) 
 
-./obj/prg01.o: ./src/prg01.c
-	gcc -Wall -c -g ./src/prg01.c -I ./inc/
-	mv prg01.o ./obj/
+$(BIN)/sCalc: $(OBJ)/prg01.o $(OBJ)/sum.o $(OBJ)/multi.o $(OBJ)/disp.o
+	$(CC) $(LDFLAGS) $(BIN)/sCalc $(OBJ)/prg01.o $(OBJ)/sum.o $(OBJ)/multi.o $(OBJ)/disp.o
 
-./obj/sum.o: ./src/sum.c
-	gcc -Wall -c -g ./src/sum.c -I ./inc/
-	mv *.o ./obj/
+$(OBJ)/prg01.o: $(SRC)/prg01.c
+	$(CC) $(CFLAGS) $(SRC)/prg01.c $(IFLAGS)
+	mv prg01.o $(OBJ)/ 
 
-./obj/multi.o: ./src/multi.c
-	gcc -Wall -c -g ./src/multi.c -I ./inc/
-	mv *.o ./obj/
+$(OBJ)/sum.o: $(SRC)/sum.c
+	$(CC) $(CFLAGS) $(SRC)/sum.c $(IFLAGS)
+	mv sum.o $(OBJ)/ 
 
-./obj/disp.o: ./src/disp.c
-	gcc -Wall -c -g ./src/disp.c -I ./inc/
-	mv *.o ./obj/
+$(OBJ)/multi.o: $(SRC)/multi.c
+	$(CC) $(CFLAGS) $(SRC)/multi.c $(IFLAGS)
+	mv multi.o $(OBJ)/ 
+
+$(OBJ)/disp.o: $(SRC)/disp.c
+	$(CC) $(CFLAGS) $(SRC)/disp.c $(IFLAGS)
+	mv disp.o $(OBJ)/ 
 
 clean:
-	rm -f ./obj/*
-	rm -f ./bin/*
-	@echo "Cleaning Done!"
+	rm -f $(OBJ)/*
+	rm -f $(BIN)/*
+	@echo "cleaning Done!"
 
 
