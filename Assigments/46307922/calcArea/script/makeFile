@@ -1,0 +1,40 @@
+CC = gcc
+CFLAGS = -Wall -c -g
+LDFLAGS = -o
+OBJ = ./obj
+SRC = ./src
+BIN = ./bin
+INC = ./inc/
+
+IFLAGS = -I $(INC)
+
+$(BIN)/sCalc: main.o areaSqu.o areaRec.o areaTri.o areaCir.o
+	@echo "Building Area Program"
+	$(CC) $(LDFLAGS) $(BIN)/area  $(OBJ)/main.o $(OBJ)/areaSqu.o $(OBJ)/areaRec.o $(OBJ)/areaTri.o $(OBJ)/areaCir.o
+	@echo "Built Area Program"
+
+main.o: $(SRC)/main.c
+	$(CC) $(CFLAGS) $(SRC)/main.c $(IFLAGS)
+	mv *.o $(OBJ)/
+
+areaSqu.o: $(SRC)/areaSqu.c
+	$(CC) $(CFLAGS) $(SRC)/areaSqu.c $(IFLAGS)
+	mv *.o $(OBJ)/
+
+
+areaRec.o: $(SRC)/areaRec.c
+	$(CC) $(CFLAGS) $(SRC)/areaRec.c $(IFLAGS)
+	mv *.o $(OBJ)/
+
+areaCir.o: ./src/areaCir.c
+	$(CC) $(CFLAGS) $(SRC)/areaCir.c $(IFLAGS)
+	mv *.o $(OBJ)/ 	
+
+areaTri.o: ./src/areaTri.c
+	$(CC) $(CFLAGS) $(SRC)/areaTri.c $(IFLAGS)
+	mv *.o $(OBJ)/ 	
+
+clean:
+	rm -f $(OBJ)/*
+	rm -f $(BIN)/*
+	@echo "Mission Passed"	
