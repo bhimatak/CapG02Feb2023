@@ -20,3 +20,9 @@ CFLAGS = -Wall -c -g
 	gcc -Wall -c -g ./src/disp.c -I ./inc/
 	mv *.o ./obj/
 
+clean:
+	rm -f ./obj/*
+	rm -f ./bin/*
+	@echo "Cleaning Done!"
+
+
