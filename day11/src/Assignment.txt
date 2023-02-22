@@ -1,0 +1,7 @@
+WAP to store m1,m2 and m3 marks for 5 different students using 2D arrays having different roll numbers again stored in the same array
+
+1001 => 55,66,77
+1002 => 34, 44, 66
+1003 => 44,55,77
+...
+..
