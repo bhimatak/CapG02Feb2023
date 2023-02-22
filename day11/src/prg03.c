@@ -20,7 +20,8 @@ int main()
 	//memset(sName,'\0',20);
 
 	//strcat(dName,"\r");
-	strcat(dName,sName);
+	//strcat(dName,sName);
+	strncat(dName,sName,3);
 
 	printf("\nsName: %s\ndName: %s\n",sName,dName);
 
