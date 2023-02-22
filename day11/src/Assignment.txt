@@ -5,3 +5,9 @@ WAP to store m1,m2 and m3 marks for 5 different students using 2D arrays having 
 1003 => 44,55,77
 ...
 ..
+
+
+RollNo M1 M2 M3
+1001   55 66 77
+1002   34 44 66
+...
