@@ -11,9 +11,9 @@ int sort(int n,int *ptr)
 			   temp=*(ptr+i);
 			   *(ptr+i)=*(ptr+j);
 			   *(ptr+j)=temp;
-	   	    }
-	    }
-    }
+	   	        }
+	        }
+        }
 	for(i=0;i<n;i++)
 	    printf("\n%d\n",*(ptr+i));
 }

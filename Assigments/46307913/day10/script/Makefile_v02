@@ -1,0 +1,11 @@
+all: HelloWorld HelloAvinash HelloAAravind
+
+HelloWorld:
+	@echo "Hello World"
+	@echo "Hello second line of execution"
+HelloAvinash:
+	@echo "Hello Avinash"
+HelloAAravind:
+	@echo "Hello AAravind"
+WhatsTime:
+	@date 
