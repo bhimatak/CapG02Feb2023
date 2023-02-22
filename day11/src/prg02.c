@@ -12,6 +12,13 @@ int main()
 
 	printf("\ndName = %s",dName);
 
+	//memset(dName,'\0',20);
+
+	strncpy(dName,"Shankar",3);
+
+	printf("\ndName = %s",dName);
+
+
 	printf("\n\n");
 
 	return 0;
