@@ -35,14 +35,14 @@ strcpy(str[2],"cdef");
 #include <string.h>
 
 #define row 3
-#define col 50
+#define col 1024
 #define BUFF 1024
 
 int main()
 {
 	int i,j;
 
-	char eName[row][BUFF];
+	char eName[row][col];
 
 	/*
 	strcpy(eName[0],"Akash");
