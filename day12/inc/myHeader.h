@@ -2,6 +2,7 @@
 /* for integer arrays */
 #include <string.h>
 
+#define row 3
 #define BUFF 1024
 
 void dispArr(int *, int);
@@ -14,9 +15,9 @@ void sortDArr(int *, int);
 
 /* array function for strings */
 
-void dispList(char **, int);
+void dispList(char [row][BUFF], int);
 
-char **setList(char **, int);
+void setList(char [row][BUFF], int);
 
 char **sortStrAsc(char **, int);
 

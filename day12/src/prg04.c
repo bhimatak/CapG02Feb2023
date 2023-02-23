@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <myHeader.h>
 
-#define rows 3
+
 
 int main()
 {
 
-	char eName[rows][BUFF];
+	char eName[row][BUFF];
 
-	setList(eName, rows);
-	dispList(eName, rows);
+	setList(eName, row);
+	dispList(eName, row);
 
 	printf("\n\n");
 	return 0;

@@ -32,9 +32,9 @@ $(OBJ)/prg03.o: $(SRC)/prg03.c
 	$(CC) $(CFLAGS) $(SRC)/prg03.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
-$(OBJ)/myFunctions.o: $(SRC)/myFunctions.c
-	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
-	mv *.o $(OBJ)/
+#$(OBJ)/myFunctions.o: $(SRC)/myFunctions.c
+#	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
+#	mv *.o $(OBJ)/
 
 prg04: $(OBJ)/prg04.o $(OBJ)/myFunctions.o
 	$(CC) $(LDFLAGS) $(BIN)/prg04 $(OBJ)/prg04.o $(OBJ)/myFunctions.o
