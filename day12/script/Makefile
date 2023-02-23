@@ -9,7 +9,7 @@ BIN = ./bin
 
 IFLAGS = -I $(INC)
 
-all: prg01 prg02 prg03
+all: prg01 prg02 prg03 prg04
 
 prg01: $(OBJ)/prg01.o
 	$(CC) $(LDFLAGS) $(BIN)/prg01 $(OBJ)/prg01.o
@@ -36,11 +36,15 @@ $(OBJ)/myFunctions.o: $(SRC)/myFunctions.c
 	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
-prg04: $(OBJ)/prg04.o
-	$(CC) $(LDFLAGS) $(BIN)/prg04 $(OBJ)/prg04.o
+prg04: $(OBJ)/prg04.o $(OBJ)/myFunctions.o
+	$(CC) $(LDFLAGS) $(BIN)/prg04 $(OBJ)/prg04.o $(OBJ)/myFunctions.o
 
 $(OBJ)/prg04.o: $(SRC)/prg04.c
-	$(CC) $(CFLAGS) $(SRC)/prg04.c
+	$(CC) $(CFLAGS) $(SRC)/prg04.c $(IFLAGS)
+	mv *.o $(OBJ)/
+
+$(OBJ)/myFunctions.o: $(SRC)/myFunctions.c
+	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
 
