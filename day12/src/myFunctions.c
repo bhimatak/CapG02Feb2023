@@ -70,7 +70,7 @@ void sortDArr(int *arr, int aSize)
 
 /* String functions for the list */
 
-void dispList(char **str, int rows)
+void dispList(char str[row][BUFF], int rows)
 {
 	int it;
 	printf("\nList is:\n");
@@ -80,7 +80,7 @@ void dispList(char **str, int rows)
 }
 
 
-char **setList(char **str, int rows)
+void setList(char str[row][BUFF], int rows)
 {
 	int it;
 	printf("\nEnter the %d Strings ",rows);
@@ -91,5 +91,5 @@ char **setList(char **str, int rows)
 	}
 	printf("\nSetting the values is Done!\n");
 
-	return str;
+	//return str;
 }
