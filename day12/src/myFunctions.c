@@ -66,3 +66,30 @@ void sortDArr(int *arr, int aSize)
 	}
 
 }
+
+
+/* String functions for the list */
+
+void dispList(char **str, int rows)
+{
+	int it;
+	printf("\nList is:\n");
+	for(it=0;it<rows;it++)
+		printf("\n%s",str[it]);
+	printf("\n\n");
+}
+
+
+char **setList(char **str, int rows)
+{
+	int it;
+	printf("\nEnter the %d Strings ",rows);
+	for(it=0;it<rows;it++)
+	{
+		fgets(str[it],BUFF,stdin);
+		str[it][strlen(str[it])-1] = '\0';
+	}
+	printf("\nSetting the values is Done!\n");
+
+	return str;
+}
