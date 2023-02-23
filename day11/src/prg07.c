@@ -20,9 +20,15 @@ arr[2][2] => its has 4 ints
 
 int main()
 {
-	int arr[row][col] = {{1,2},{3,4}};
+	int arr[row][col];// = {{1,2},{3,4}};
 
 	int i,j;
+
+	for(i=0;i<row;i++)
+	{
+		for(j=0;j<col;j++)
+			scanf("%d",&arr[i][j]);
+	}
 
 	for(i=0;i<row;i++)
 	{
