@@ -93,3 +93,24 @@ void setList(char str[row][BUFF], int rows)
 
 	//return str;
 }
+
+
+void sortStrAsc(char str[row][BUFF], int rows)
+{
+
+	int it1, it2;
+	char temp[BUFF];
+
+	for(it1=0;it1<rows;it1++)
+	{
+		for(it2=it1;it2<rows;it2++)
+		{
+			if(strcmp(str[it1],str[it2])>0)
+			{
+				strcpy(temp, str[it2]);
+				strcpy(str[it2], str[it1]);
+				strcpy(str[it1],temp);
+			}
+		}
+	}
+}
