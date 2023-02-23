@@ -19,6 +19,6 @@ void dispList(char [row][BUFF], int);
 
 void setList(char [row][BUFF], int);
 
-char **sortStrAsc(char **, int);
+void sortStrAsc(char [row][BUFF], int);
 
 char **sortStrDsc(char **, int);
