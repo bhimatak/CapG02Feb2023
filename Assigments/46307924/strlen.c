@@ -17,7 +17,3 @@ int main()
 	printf("The length of the string is : %d",count);
 	return 0;
 }
-
-
-
-
