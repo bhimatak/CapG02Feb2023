@@ -1,0 +1,65 @@
+MANDATORY QUESTIONS
+1.pwd
+
+2.ls -la,ls
+
+3.a)mkdir
+
+  b)cd d1
+
+    mkdir d2
+
+  c)cd d2
+
+  d)vi f1.txt
+
+  e)cat f1.txt
+
+  f)ls ..
+
+4.ls -d
+
+5.a)ls ?
+
+  b)ls -la
+
+  c)ls tb*.1
+
+6.ls -S
+
+7.rm temp*
+
+8.head -4
+
+9.mkdir testdir
+
+10.a)cp tb1.1 ./testdir/
+
+   b)cp tb*.1 ./new/
+
+   c)mkdir ./new1/
+
+   d)cp tb2.1 tb6.1 tb7.1 tb10.1 ./new1/
+
+   e)cp -R new/newprogs
+
+11.a)mv command move or rename file or directories
+     cp command is use to copy files or directories
+   
+   b)rm command is use to remove files from a directories.
+     rmdir is use to remove a directories.
+
+   c)mkdir use to make or create a new directories.
+     mkdir -p checks and make parent directories if it does not exists.
+
+12. rn -r testdir
+ 
+13. man
+
+14.the directories does not exists.
+
+15.a)navigate to root directories.
+
+   b)navigate to parent directories.
+
+   c)navigate to home directories.
