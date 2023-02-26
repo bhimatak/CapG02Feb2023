@@ -1,0 +1,9 @@
+int isPrime(int);
+int sumProdGN(int);
+int getNumber();
+int divideNumber(int);
+int printList();
+int printList1();
+int productEqOrNot(int);
+int uniqueNumber(int);
+int printList2();
