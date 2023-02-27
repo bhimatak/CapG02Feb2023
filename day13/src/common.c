@@ -15,3 +15,12 @@ int signUp(PERSON *p)
 
 	return pid;
 }
+
+
+int signIn(PERSON *p, LOGIN *l,int *pid)
+{
+	
+	int flag = checkCrid(p, l->uid, l->passwd, pid);
+
+	return flag;
+}

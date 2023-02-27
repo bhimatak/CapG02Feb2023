@@ -28,7 +28,8 @@ int getPDetails(PERSON *p)
 	
 	//logic to check no of recs present in db and get the count
 	pid = 101;
-
+	p->pid = pid;
+	
 	return pid;
 
 }
