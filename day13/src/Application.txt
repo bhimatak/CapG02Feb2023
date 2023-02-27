@@ -109,3 +109,15 @@ main()
 {
 	
 }
+
+
+
+protection/ gurading of header files
+
+
+#ifndef LOGIN_H
+#define LOGIN_H
+
+code.....
+
+#endif
