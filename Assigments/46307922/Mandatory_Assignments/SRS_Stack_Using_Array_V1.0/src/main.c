@@ -15,23 +15,23 @@ int main()
 	{
 		while(1)
 		{
-			printf("\n\n1.To check stack is full or not\n2.To check stack is empty or not\n3.To print reverse order of input\n4.Exit\n\n");
+			printf("\n\n1.To check stack is full || not\n2.To check stack is empty || not\n3.To print reverse order of input\n4.Exit\n\n");
 			scanf("%d",&choice);
 
 			switch(choice)
 			{
 				case 1:
 					if(isFull(top))
-						printf("\nStack is full!\n");
+						printf("\nStack full!\n");
 					else
-						printf("\nStack is not full!\n");
+						printf("\nStack not full!\n");
 					break;
 
 				case 2:
 					if(isEmpty(top))
-						printf("\nStack is empty!\n");
+						printf("\nStack empty!\n");
 					else
-						printf("\nStack is not empty!\n");
+						printf("\nStack not empty!\n");
 					break;
 
 				case 3:
@@ -39,25 +39,25 @@ int main()
 						reverseDisplay(stack,top);
 					else
 					{
-						printf("\n\nNo elements available to print!!\n\n");	
-						printf("\nThankyou for using the application!!\n\n");
+						printf("\n\nNo elements to print!!\n\n");	
+						printf("\nThanks for using!!\n\n");
 						exit(EXIT_SUCCESS);
 					}
 					break;
 
 				case 4:
 					
-					printf("\nThankyou for using the application!!\n\n");
+					printf("\nThanks for using!!\n\n");
 					exit(EXIT_SUCCESS);
 
 				default:
-					printf("\nWrong choice!!!!\n");
+					printf("\nWrong choice!!\n");
 			}
 		}
 	}
 	else
 	{
-		printf("\n\nThankyou for using the application!!\n\n");
+		printf("\n\nThanks for using!!\n\n");
 	}
 
 	return 0;
