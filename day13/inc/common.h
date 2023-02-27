@@ -11,5 +11,6 @@ int dispMain();
 
 int signUp(PERSON *);
 int signIn(PERSON *, LOGIN *,int *);
+int tktBkgMenu();
 
 #endif
