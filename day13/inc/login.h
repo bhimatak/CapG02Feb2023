@@ -1,3 +1,8 @@
+#ifndef LOGIN_H
+#define LOGIN_H
+
+#include <persons.h>
+
 struct login
 {
 	int uid;
@@ -7,3 +12,6 @@ struct login
 
 typedef struct login LOGIN;
 
+int checkCrid(PERSON *, int, char*, int *);
+
+#endif

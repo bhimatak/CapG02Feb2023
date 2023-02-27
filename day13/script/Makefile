@@ -9,47 +9,22 @@ BIN = ./bin
 
 IFLAGS = -I $(INC)
 
-all: prg01
+all: app
 
-prg01: $(OBJ)/prg01.o
-	$(CC) $(LDFLAGS) $(BIN)/prg01 $(OBJ)/prg01.o
+app: $(OBJ)/Main.o $(OBJ)/persons.o $(OBJ)/common.o
+	$(CC) $(LDFLAGS) $(BIN)/app $(OBJ)/Main.o $(OBJ)/persons.o $(OBJ)/common.o
 
-$(OBJ)/prg01.o: $(SRC)/prg01.c
-	$(CC) $(CFLAGS) $(SRC)/prg01.c
+$(OBJ)/Main.o: $(SRC)/Main.c
+	$(CC) $(CFLAGS) $(SRC)/Main.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
-prg02: $(OBJ)/prg02.o
-	$(CC) $(LDFLAGS) $(BIN)/prg02 $(OBJ)/prg02.o
-
-$(OBJ)/prg02.o: $(SRC)/prg02.c
-	$(CC) $(CFLAGS) $(SRC)/prg02.c
+$(OBJ)/persons.o: $(SRC)/persons.c
+	$(CC) $(CFLAGS) $(SRC)/persons.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
-prg03: $(OBJ)/prg03.o $(OBJ)/myFunctions.o
-	$(CC) $(LDFLAGS) $(BIN)/prg03 $(OBJ)/prg03.o $(OBJ)/myFunctions.o
-
-$(OBJ)/prg03.o: $(SRC)/prg03.c
-	$(CC) $(CFLAGS) $(SRC)/prg03.c $(IFLAGS)
+$(OBJ)/common.o: $(SRC)/common.c
+	$(CC) $(CFLAGS) $(SRC)/common.c $(IFLAGS)
 	mv *.o $(OBJ)/
-
-#$(OBJ)/myFunctions.o: $(SRC)/myFunctions.c
-#	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
-#	mv *.o $(OBJ)/
-
-prg04: $(OBJ)/prg04.o $(OBJ)/myFunctions.o
-	$(CC) $(LDFLAGS) $(BIN)/prg04 $(OBJ)/prg04.o $(OBJ)/myFunctions.o
-
-$(OBJ)/prg04.o: $(SRC)/prg04.c
-	$(CC) $(CFLAGS) $(SRC)/prg04.c $(IFLAGS)
-	mv *.o $(OBJ)/
-
-$(OBJ)/myFunctions.o: $(SRC)/myFunctions.c
-	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
-	mv *.o $(OBJ)/
-
-
-
-
 
 
 clean:
