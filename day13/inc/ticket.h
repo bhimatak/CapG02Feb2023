@@ -1,3 +1,6 @@
+#ifndef TICKET_H
+#define TICKET_H
+
 struct ticket
 {
 	int bid; //booking id is generated after ticket/transaction is confirmed
@@ -13,3 +16,5 @@ struct ticket
 typedef struct ticket TICKET;
 
 
+
+#endif
