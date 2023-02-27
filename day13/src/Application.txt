@@ -15,6 +15,7 @@ pid (unique), name, emailid(unique), phno, gender, uid, passwd,age, address
 
 signIn 
 
+login=>
 uid, passwd
 
 ticket
@@ -22,3 +23,89 @@ ticket
 bookingid(pnr), booking date, traveldate, source, dest, status(booked/canceled),seat no, pid
 
 
+struct Person
+{
+	int pid,
+	char name[20];
+	char emailid[20];
+	int phno;
+	char gender;
+	int uid;
+	char passwd[20];
+	int age;
+	char address[50];
+};
+
+
+struct login
+{
+	int uid;
+	int pid; // pid is updated if login is found
+	char passwd[20];
+};
+
+
+struct ticket
+{
+	int bid; //booking id is generated after ticket/transaction is confirmed
+	char bdate[20];
+	char tdate[20];
+	char src[20];
+	char dest[20];
+	int status; // 1 for booked . 0 for cancelled
+	int sno;
+	int pid;
+};
+
+
+
+
+screens
+1. main screen
+
+press,
+1. signup
+2. signin
+3. exit
+choice:
+
+choice: 1
+
+sub screen 1
+
+=====
+signup screen
+
+enter,
+check in db if any records(no of persons) are present
+if present get the count like count = 11 so the next pid = count+1 = 12
+users/persons details
+---- validate names, emailid, date(age), all  fields
+adding pid in it
+saving the data
+======
+
+======
+signin
+enter uid,passwd
+match with the database
+if match found => login success msg and update pid 
+else => check login credentials
+
+login sucess=>
+
+booking screen
+
+enter,
+dot, src, dest, sno,
+get pid from person table/struct => uid
+
+update bid, bdate(current date), status pid
+
+
+
+driver code:
+main()
+{
+	
+}
