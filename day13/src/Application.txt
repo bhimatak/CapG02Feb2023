@@ -1,0 +1,24 @@
+Bus Ticket booking
+
+1. signIn(login)
+2. signUp(register)
+3. source
+4. desitination
+5. avail
+6. DOT
+7. Confirmation message with ticket id
+
+signUp
+
+person=>
+pid (unique), name, emailid(unique), phno, gender, uid, passwd,age, address
+
+signIn 
+
+uid, passwd
+
+ticket
+
+bookingid(pnr), booking date, traveldate, source, dest, status(booked/canceled),seat no, pid
+
+
