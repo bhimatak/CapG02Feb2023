@@ -7,7 +7,9 @@ int main()
 {
 	PERSON p;
 	LOGIN l;
-	int pid=0, lflag = 0;
+	TICKET t;
+	int pid=0, lflag = 0,flag=0;
+	int tktid = 0;
 	
 	while(1){
 
@@ -28,8 +30,30 @@ int main()
 					lflag = signIn(&p,&l,&pid);
 					if(lflag)
 						printf("\nLogin Unsuccessfull\n");
-					else
+					else{
 						printf("\nLogin Success!\n");
+						while(1)
+						{
+							flag = 0;
+							switch(tktBkgMenu())
+							{
+								case 1:
+										tktid = bookTkt(&t, pid);
+										break;
+								case 2:
+										printTktDet(&t, tktid);
+										break;
+								case 3:
+										flag = 1;
+										break;
+								default:
+										printf("\nWrong Choice");
+
+							}
+							if(flag == 1)
+								break;
+						}
+					}
 					break;
 			case 3: exit(EXIT_SUCCESS);
 					break;
