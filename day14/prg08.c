@@ -23,11 +23,11 @@ int main()
 	int i,j;
 	int **ptr = (int **)malloc(row * sizeof(int*));
 	for(i=0;i<row;i++)
-		ptr[i]=(int *)malloc(col*sizeof(int)); 
+		*(ptr+i)=(int *)malloc(col*sizeof(int)); 
 
 	for(i=0;i<row;i++)
 		for(j=0;j<col;j++)
-			scanf("%d",&ptr[i][j]);
+			scanf("%d",(*(ptr+i)+j));
 
 	printList(ptr);
 
