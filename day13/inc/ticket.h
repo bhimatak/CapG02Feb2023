@@ -15,6 +15,16 @@ struct ticket
 
 typedef struct ticket TICKET;
 
+int printTktDet(TICKET *, int);
+
+/*
+return is bid i.e booking id
+i/p params are
+1. Ticket struct which is sent from the main program
+2. pid which is capture during login will be sent to this function
+and tktid and pid are linked now.
+*/
+int bookTkt(TICKET *, int);
 
 
 #endif
