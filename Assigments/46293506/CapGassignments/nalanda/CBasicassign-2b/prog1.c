@@ -12,8 +12,10 @@ int main()
 	char str[1024];
 //	int count;
         getSentence(str);
-	printf("%s\n",str);
+//	printf("%s\n",str);
 	printf("NO of Words: %d\n",printOneWord(str));
+   //     printLongestWord(str);
+    
 
 
 	return 0;
@@ -32,7 +34,7 @@ int printOneWord(char str[])
 	int jvalue =0;
 	for(i=0;i<=strlen(str);i++)
 	{
-		if(str[i]==32)
+		if(str[i]==32 && str[i+1]!=32)
 		{
 			count++;
 			for(j=jvalue;j<=i;j++)
@@ -44,18 +46,67 @@ int printOneWord(char str[])
 			printf("\n");
 
 	            }
+		if(str[i]!=32)
+		{
+			for(j=jvalue+1;j<=strlen(str);j++)
+			{
+				printf("%c",str[j]);
+				
+			}
+		
+		}
+		printf("\n\n");
+
 	}
 
 
-			for(j=jvalue;j<=strlen(str);j++)
+		/*	for(j=jvalue;j<=strlen(str);j++)
 			{
 				printf("%c",str[j]);
 			}
-			printf("\n\n");
+			printf("\n\n");*/
 		
 	
 	return count;
 }
 
 
+int printLongestWord(char str[])
+{
+	int i,j;
+	int large=2;
+	int count=0;
+	int jvalue =0;
+	for(i=0;i<=strlen(str);i++)
+	{
+		if(str[i]==32)
+		{       count=0;
+			for(j=jvalue;j<=i;j++)
+			{
+		           if(str[j]!=32)
+			   {
+				   count++;
+			           
+			   }
+			  
+			}
+                        
+		
+			
+                     
+		        jvalue=i;
+
+	            }
+
+	}
+
+			for(j=jvalue;j<=strlen(str);j++)
+			{
+			//	printf("%c",str[j]);
+			}
+			printf("\n\n");
+		
+	
+	return count;
+}
 
