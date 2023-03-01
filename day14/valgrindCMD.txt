@@ -1,0 +1,3 @@
+-v --tool=memcheck --leak-check=full --show-reachable=yes --log-file=valclient
+
+valgrind -v --tool=memcheck --leak-check=full --show-reachable=yes --log-file=valclient1 ./prg7
