@@ -53,6 +53,29 @@ ABCDEOLM
 o/p
 BAhBiCmDaEOLM
 
+WAP to sort the character of the string in aplabetical order.
+
+i/p
+EDCBA
+
+o/p
+ABCDE
+
+
+find the freq of the chars present in the string
+
+i/p
+HelloWorld
+
+o/p
+H = 1
+e= 1
+l = 3
+o = 2
+W= 2
+r = 1
+d = 1
+
 
 
 Q. Problem Statement:
