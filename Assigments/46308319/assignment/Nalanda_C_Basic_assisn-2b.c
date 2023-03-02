@@ -2,7 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-void input_func(char[]);
+void input_function(char[]);
 int word_count(char[]);
 void single_line_wspace(char[]);
 int replacews(char[], char);
@@ -16,7 +16,7 @@ int main()
 	char rep='!';
 	char substring[1024];
 
-	input_func(str);
+	input_function(str);
 	
 	nOfWords= word_count(str);
 
@@ -26,7 +26,7 @@ int main()
 
 	printf("\n\nThe length of the longest word is %d \n\n",longword);
 
-	printf("\n\nEnter the substring:");
+	printf("\n\nEnter the Substring:");
 	fgets(substring,1024,stdin);
 
 	substr(str,substring);
@@ -42,9 +42,9 @@ int main()
 }
 
 
-void input_func(char str[])
+void input_function(char str[])
 {
-	printf("\n\nEnter the sentence:\n");
+	printf("\n\nEnter the Sentence:\n");
 	
 	fgets(str,1024,stdin);
 	
@@ -140,7 +140,7 @@ int long_word(char str[])
 		j=i-max;
 	}
 	
-	printf("\n\nThe longest word is ");
+	printf("\n\nThe Longest Word is ");
 
 
 	for(i=0;i<max ;i++)
@@ -178,7 +178,7 @@ void substr(char str[], char substring[])
 
 	else
 	{
-		printf("\n\nNo substring found!!\n\n");
+		printf("\n\nNo Substrings Found\n\n");
 	}
 
 }
