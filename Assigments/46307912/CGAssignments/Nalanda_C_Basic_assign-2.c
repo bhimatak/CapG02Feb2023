@@ -1,104 +1,90 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
-void input_func(char []);
-int word_count(char []);
-void single_line_wspace(char []);
-int replacews(char [], char);
-int long_word(char []);
+void input_func(char[]);
+int word_count(char[]);
+void single_line_wspace(char[]);
+int replacews(char[], char);
+int long_word(char[]);
+void substr(char[],char[]);
 
 int main()
 {
-	char str[1024];
+	char str[1000];
 	int nOfWords=0,replacement=0,longword=0;
 	char rep='!';
-
+	char substring[1000];
 	input_func(str);
-	
 	nOfWords= word_count(str);
-
-	printf("\n\nThere are %d words in the given sentence\n\n",nOfWords);
-	
+	printf("\nTotal words in the sentence are : %d\n",nOfWords);
 	longword=long_word(str);
-
-	printf("\n\nThe length of the longest word is %d \n\n",longword);
-
+	printf("\n");
+	printf("\nLength of the longest word is : %d\n",longword);
 	single_line_wspace(str);
-
 	replacement=replacews(str,rep);
-
-	printf("\n\nThere are %d replacements done\n\n",replacement);
-
+	printf("\nTotal replacements are : %d",replacement);
 	return 0;
-
 }
-
 
 void input_func(char str[])
 {
-	printf("\n\nEnter the sentence:\n");
-	
-	fgets(str,1024,stdin);
-	
+	printf("\nEnter the sentence : ");
+	fgets(str,1000,stdin);
 }
 
 int word_count(char str[])
 {
 	int count=0,i;
-
-	printf("\n");
-
+	printf("\nWords in the given sentence are : \n\n");
 	for(i=0;str[i]!= '\n';i++)
 	{
 		if(str[i]!=' ')
 		{
 			printf("%c",str[i]);
 		}
-
 		else
 		{
 			printf("\n");
 			count++;
 		}
 	}
-
+	printf("\n");
 	return count+1;
-
 }
 
 void single_line_wspace(char str[])
 {
 	int i=0;
-
-	printf("\n\n");
-
-	for(i=0;str[i]!='\n';i++)
+	printf("\nGiven sentence without spaces : ");
+	for(i=0;str[i]!='\0';i++)
 	{
 		if(str[i] == ' ')
 			continue;
 
 		else
 			printf("%c",str[i]);
-
 	}
-
-	printf("\n\n");
+	printf("\n");
 }
 
 int replacews(char str[], char rep)
 {
 	int i=0,count=0;
-
+	printf("Sentence after replacing white spaces with ! : ");
 	for(i=0;str[i]!='\n';i++)
 	{
-		if(str[i]==' ')
+		if(str[i] == ' ')
 		{
-			str[i]=rep;
-			count++;
+		    printf("!");
+		    count++;
+			continue;
 		}
+		else
+			printf("%c",str[i]);
 	}
-
+	printf("\n");
 	return count;
-
 }
 
 int long_word(char str[])
@@ -111,7 +97,6 @@ int long_word(char str[])
 		{
 			length++;
 		}
-
 		else
 		{
 			if(length>max)
@@ -119,24 +104,18 @@ int long_word(char str[])
 				max=length;
 				j=i-max;
 			}
-
 			length=0;
 		}
-				
 	}
-
 	if(length>max)
 	{
 		max=length;
 		j=i-max;
 	}
-	
-	printf("\n\nThe longest word is ");
-
-
+	printf("\nLongest word in the sentence : ");
 	for(i=0;i<max ;i++)
+	{
 		printf("%c",str[j+i]);
-
+	}
 	return max;
-
 }
