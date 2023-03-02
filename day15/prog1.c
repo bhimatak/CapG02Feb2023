@@ -16,6 +16,7 @@ void display(emp emp1)
     printf("Employee Name : %s\n",emp1.name);
     printf("Employee Phone : %d\n",emp1.phone);
 }
+
 int main(int argc, char **argv)
 {
     emp emp1;
