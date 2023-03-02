@@ -1,0 +1,91 @@
+1.Which command is used to know the current working directory?
+	pwd
+2.How would you find out its contents? 
+	ls -la
+3.Identify the commands with inputs to do the following
+	a.create a directory d1
+	 	mkdir d1
+    	b.create a subdirectory d2 in d1
+		mkdir -p d1/d2
+   	c.change to directory d2
+		cd d2
+    	d.create an empty file “f1.txt”
+		cat f1.txt
+   	e.display the contents of “f1.txt”
+		cat>f1.txt
+   	f.view the contents of d1 from current directory d2
+		ls -1
+4.Use the ls command with its options. How will  you identify directories from the listing? 
+	ls -d*/
+5.Use ls to do the following 
+	a.List files with single character names.
+ 		ls.?
+
+
+   	b.List hidden files also. [ Note : Hidden files are files having name started with a “.” ]
+		ls .* -la
+   	c.Suppose there are files tb1.1, tb2.1, tb3.1, ….tb10.1. Write command to list all the files 
+	[Hint: use wild card characters]
+		ls tb*.1
+6.Write the command to list all files in descending order of their size.
+		ls -S -la
+7.Suppose there are files temp1, temp2, temp3. 
+Write command to remove the files without listing them explicitly
+		rm temp*
+8.Which command is used to list top few lines in the file?
+		head -5 text.txt
+9.Create a directory “testdir”    
+		mkdir testdir
+10.Use cp command to do the following  
+       a.Copy the file tb1.1 (created above) in the same directory.
+		cp tb1.1 tbnew.1
+       b.Write a command to copy all the files i.e tb1.1,tb2.1,tb3.1,…..tb10.1 in a new directory –“new
+		cp tb*.1 ~/new/
+       c.Create a subdirectory in new in named“new1”.
+		mkdir -p new/new1
+       d.Write a command to copy selectively only tb2.1, tb6.1, tb7.1 and tb10.1 in the directory new1.
+		cp tb2.1 tb6.1
+       e.e.	Write a command to copy the entire directory “new” to a directory “newprogs”. 
+	[Note : use the –R option of “cp” command ]
+		cp -R /new//newprogs/
+11.Find out the difference between 
+            a. “mv” & “cp” 
+		mv:This command move or rename files or directories
+           		Cp:used to copy files or directories from one location or directories
+            b.“rm”, “rmdir”
+		rm:used to remove a file from the directory
+            		rmdir:used to remove a directory.rmdir with -r deletes a non empty directory
+            c.“mkdir” and  “mkdir -p”
+		mkdir:used to make/create a new directory
+           		mkdir -p:the -p with the mkdir is used to create a directory and any parent directories that does not exist.
+12.Use a single command rmdir once to remove “testdir” and  all its sub directories and files created above.
+	rm -rdf.testdir/
+13.Which command is used to get the manual information of a command?
+	man
+14.If you are not able to change to a directory what could be the likely cause?
+	We could not change to a directory if the directory does not exists/not created
+15. Explain the differences among the following commands:
+              a. cd / 
+	      to navigate a directory to root directory from current working directory.
+              b.  cd ..
+	       to navigate to the parent directory from present working directory.
+              c.  cd
+	       to change the directory.
+              d.  cd../..
+	        to change directory to multiple sub directory Footer.
+
+
+Advanced Optional Questions:-
+
+1.	How could you display the inode number of a file?
+	      You can also use the ls command, together with the -i option, to get a file's inode number. 
+	      This command lists files and directories within the filesystem.
+
+2.	What is the pipe symbol? What effect does it have? 
+		The Pipe is a command in Linux that lets you use two or more commands such that output of
+ 		one command serves as input to the next. In short, the output of each process directly as 
+		input to the next one like a pipeline. The symbol '|' denotes a pipe.
+3.	Find out the details of “ps” command ?
+		The ps command is used to view currently running processes on the system. 
+		It helps us to determine which process is doing what in our system, how much memory it is using, 
+		how much CPU space it occupies, user ID, command name.
