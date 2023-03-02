@@ -82,10 +82,10 @@ int main()
     int numElements=acceptArray(myArray,MAX_ARRAY_SIZE);
     printf("\nThe array is:\n");
     displayArray(myArray,numElements);
-    printf("\nThe sum of the maximum and minimum element is: %d\n",                       sumMaxMin(myArray,numElements));
+    printf("\nThe sum of the maximum and minimum element is: %d\n",sumMaxMin(myArray,numElements));
     printf("\nEnter an integer to count its occurrences: \n");
     scanf("%d",&item);
-    printf("\nThe number of occurrences of %d is: %d\n"                                   ,item,countOccurrences(myArray,numElements,item));
+    printf("\nThe number of occurrences of %d is: %d\n",item,countOccurrences(myArray,numElements,item));
     printf("\nReversing the array...\n");
     reverseArray(myArray,numElements);
     printf("\nThe reversed array is:\n");
