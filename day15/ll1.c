@@ -16,13 +16,13 @@ typedef struct home HOME;
 
 int main()
 {
-	HOME h1,h2,h3;
+	HOME h1,h2,h3;  // h1=>2000 h2=>3000 h3=>4000
 
 	HOME *ph;
 
 	//assign the values and assign the address of next home to ptr */
 
-	h1.val = 10;
+	h1.val = 10; 
 	h1.ptr = NULL;
 
 	h2.val = 20;
@@ -37,15 +37,19 @@ int main()
 
 	ph = &h1; // ph is pointing to BA or it the head of LINKed list 
     
-    printf("%d->",ph->val);
+    while(ph != NULL){
+    	printf("%d->",ph->val);
 
-    ph = &h2;
-	
+    	ph = ph->ptr;
+    }
+    
+	/*
 	printf("%d->",ph->val);
 
-	ph = &h3;
+	ph = ph->ptr;
 	
 	printf("%d->",ph->val);
+	*/
 
     printf("\n\n");
     return 0;
