@@ -1,0 +1,50 @@
+Mandatory Question
+
+1.  pwd
+
+2.  ls -la
+
+3.  a)mkdir d1
+    b)mkdir ./d2/
+    c)cd d2
+    d)vi f1.txt
+    e)cat f1.txt
+    f)ls ..
+
+4.  ls -d
+
+5.  a)ls ?
+    b)ls -la
+    c)ls tb*.1
+
+6.  ls -S
+
+7.  rm temp*
+
+8.  head -3 file.txt
+
+9.  mkdir testdir
+
+10. a)cp tb1.1 ./testdir/
+    b)cp tb*.1 ./new/
+    c)mkdir ./new1/
+    d)cp tb2.1 tb6.1 tb7.1 tb10.1 ./new1/
+    e)cp -R ./new/ ./newProgs/
+
+11. a)"mv" command moves or rename files whereas 
+      "cp" command copy files in directories.
+    b)"rm" command removes each specified file. By default, it does not remove directories whereas 
+      "rmdir" command used to remove a directory, if it is empty.   
+    c)"mkdir" command used to make/ create a directory whereas 
+      "mkdir -p" command checks and makes parent directory, if doesn't exist. 
+
+12. rm -r testdir
+
+13. man
+
+14. The directory doesn't exist.
+
+15. a)navigate to root directory.
+    b)navigate to parent directory.
+    c)navigate to home directory.
+    d)change directory to multiple directory
