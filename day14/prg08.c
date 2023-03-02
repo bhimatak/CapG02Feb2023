@@ -30,6 +30,10 @@ int main()
 			scanf("%d",(*(ptr+i)+j));
 
 	printList(ptr);
+	for(i=0;i<row;i++)
+		free(ptr[i]);
+	
+	free(ptr);
 
 	printf("\n\n");
 	return 0;
