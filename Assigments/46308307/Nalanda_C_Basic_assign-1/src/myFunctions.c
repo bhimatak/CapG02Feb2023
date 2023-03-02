@@ -35,6 +35,7 @@ int getValues(int *myArray,int numberAccept,int maxSize)
 			scanf("%d",&myArray[i]);
 		}
 	}
+	return numberAccept;
 }
 
 int sumElement(int *myArray,int size)
