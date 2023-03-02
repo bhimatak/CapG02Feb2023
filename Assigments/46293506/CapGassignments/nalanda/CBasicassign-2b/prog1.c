@@ -1,23 +1,53 @@
 #include<stdio.h> 
 #include<string.h> 
 #include<stdlib.h>
-
+#include<ctype.h>
 
 int getSentence(char []); 
+int dispSen(char *);
 int printOneWord(char []); 
 int printLongestWord(char []); 
-int getSunString(char []);
-int findSubString(char []);
+void remove_word(char [],char []);
+int printSNSpc(char []);
+int replaceSpcByNotNull(char *);
 
 int main() 
 {
+	int ch=1,ch1;;
        	char str[1024];
 	int count;
-        getSentence(str);
-//	printf("%s\n",str);
-    //  printf("NO of Words: %d\n",printOneWord(str));
-      //printLongestWord(str);
-        findSubString(str);
+	char search[30];
+	getSentence(str);
+	while(ch)
+	{
+		printf("\nEnter \n 1.display sentence \n 2.print the sentence word by word \n 3. print the longest word in a sentence\n");
+		printf("4.to remove Word from Sentence \n 5. print word without space \n 6.replace space by not null\n 7.exit ");
+                printf("\nenter your choice\n");
+		scanf("%d",&ch1);
+		switch(ch1)
+		{
+			
+			case 1:dispSen(str);
+			       break;
+			case 2:printf("NO of Words: %d\n",printOneWord(str));
+			       break;
+			case 3:printLongestWord(str);
+			       break;
+			case 4:printf("Enter a word to search\n");
+                               scanf("%s",search);
+                               remove_word(str,search);
+			       break;
+			case 5:printSNSpc(str);
+			       break;
+			case 6:replaceSpcByNotNull(str);
+			       break;
+			default:printf("Wrong chice\n");
+				return EXIT_SUCCESS;
+
+		
+		}
+	}
+
 	return 0;
 }
 
@@ -25,6 +55,10 @@ int getSentence(char str[])
 {
        	printf("User Enter the Sentence\n");
 	fgets(str,1024,stdin); 
+}
+int dispSen(char arr[])
+{
+	printf("%s\n",arr);
 }
 
 int printOneWord(char str[]) 
@@ -108,44 +142,63 @@ int printLongestWord(char str[])
 }
  
 
-int findSubString(char str[])
-{
-	char str1[20];
-        int j,jvalue=0;
-	int i,k;
-	char *str2;
-	int len;
-	char *flag;
+void remove_word(char sentence[],char search[]) {
+    int len = strlen(sentence);
+    int start_index = -1;
+    int end_index = -1;
+    int i;
+    int shift;
+    char word[1024];
+    int search_len = strlen(search);
 
-    	printf("Enter a SubString to Search\n");
-	scanf("%s",str1);
-        k=0;
-        len =strlen(str1);
-/*	for(i=0;i<strlen(str);i++)
-	{
-		if(str[i]==32 || str[i]==10)
-		{       
-			for(j=jvalue;j<i;j++)
-			{
-				   str2[k]=str[j];
-				   k++;
+    printf("Enter string to search\n");
 
-			}
-			jvalue=i;
-			flag=strstr(str2,str1);
-			if(flag)
-			{
-				flag==2;
-			}
-		}        
-		
-         }*/
-         str2=strstr(str,str1);
-
-	 printf("%s\n",str2);
-
-
+    for (i = 0; i < len; i++) {
+        if (isspace(sentence[i]) || i == len-1) {
+            if (i == len-1) {
+                i++;
+            }
+            if (start_index != -1 && end_index == -1) {
+                end_index = i-1;
+            }
+    
+            strncpy(word, &sentence[start_index], end_index-start_index+1);
+            word[end_index-start_index+1] = '\0';
+            if (strstr(word, search) != NULL) {
+                shift = end_index-start_index+2;
+                memmove(&sentence[start_index], &sentence[start_index+shift], len-start_index-shift);
+                len -= shift;
+                i -= shift;
+            }
+            start_index = -1;
+            end_index = -1;
+        } else if (start_index == -1) {
+            start_index = i;
+        }
+    }
 }
 
+int printSNSpc(char str[])
+{
+	int i;
+	for(i=0;i<strlen(str);i++)
+	{
+		if(str[i]!=32 && str[i]!=10)
+		{
+			printf("%c",str[i]);
+		}
+	}
+	printf("\n\n");
+}
 
-
+int replaceSpcByNotNull(char str[])
+{
+	int i;
+	for(i=0;i<strlen(str);i++)
+	{
+		if(str[i]==32)
+		{
+			str[i]='!';
+		}
+	}
+}
