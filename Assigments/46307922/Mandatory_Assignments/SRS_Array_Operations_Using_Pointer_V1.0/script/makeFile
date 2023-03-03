@@ -16,7 +16,7 @@ $(OBJ)/main.o: $(SRC)/main.c
 	$(CC) $(CFLAGS) $(SRC)/main.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
-$(OBJ)/myfuntions.o: $(SRC)/myfunctions.c
+$(OBJ)/myfunctions.o: $(SRC)/myfunctions.c
 	$(CC) $(CFLAGS) $(SRC)/myfunctions.c $(IFLAGS)
 	mv *.o $(OBJ)/
 
