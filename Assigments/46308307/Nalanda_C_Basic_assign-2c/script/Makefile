@@ -7,13 +7,13 @@ INC = ./inc/
 LDFLAGS = -o
 IFLAGS = -I $(INC)
 
-SentenceManipultion: $(OBJ)/myFunctions.o $(OBJ)/sentence.o
-	$(CC) $(LDFLAGS) $(BIN)/SentenceManipulation $(OBJ)/myFunctions.o $(OBJ)/sentence.o
+Employee: $(OBJ)/myFunctions.o $(OBJ)/employee.o
+	$(CC) $(LDFLAGS) $(BIN)/Employee $(OBJ)/myFunctions.o $(OBJ)/employee.o
 $(OBJ)/myFunctions.o: $(SRC)/myFunctions.c
 	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
 	mv *.o $(OBJ)/
-$(OBJ)/sentence.o: $(SRC)/sentence.c
-	$(CC) $(CFLAGS) $(SRC)/sentence.c $(IFLAGS)
+$(OBJ)/employee.o: $(SRC)/employee.c
+	$(CC) $(CFLAGS) $(SRC)/employee.c $(IFLAGS)
 	mv *.o $(OBJ)/
 	
 

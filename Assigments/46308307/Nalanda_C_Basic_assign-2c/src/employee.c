@@ -6,40 +6,31 @@
 
 int main()
 {
-	char mystr[BUFF];
+
 	int choice;
-	int words = 0;
-	int replace = 0;
-	int longest = 0;
 
 	while(1)
 	{
 
-	        printf("\n\n1.Input a sentence\n2.Print one word in a line\n3.Print the longest word in the sentence\n4.Print words in a line without printing white space\n5.Replace all the white spaces with !\n6.EXIT\n");
+	        printf("\n\n1.Input your name,gender, age and salary in global variable.\n2.Display name, gender, age and salary stored in global variable.\n3.Input your name, gender, age and salary in structure.\n4.Display name, gender, age and salary stored in structure.\n5.EXIT\n");
 		printf("\nEnter your choice:");
 		scanf("%d",&choice);
 		switch(choice)
 		{
 			case 1:
-				getSentence(mystr);
+				read();
 				break;
 			case 2:
 
-				words = dispWord(mystr);
-				printf("\nNumber of words in a sentence = %d",words);
+				disp();
 				break;
 			case 3:
-				longest = dispLongest(mystr);
-				printf("\nLongest word in the sentence = %d",longest);
+				readStructure();
 				break;
 			case 4:
-				dispWords(mystr);
+				dispStructure();
 				break;
 			case 5:
-				replace = replacews(mystr);
-				printf("\nNo. of white spaces replaced = %d",replace);
-				break;
-			case 6:
 
 				printf("\nApplication has exited successfully!\n\n");
 				exit(EXIT_SUCCESS);
