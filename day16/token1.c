@@ -4,18 +4,20 @@
 
 #define lSize 1024
 
-char **split_words(char *, int *);
+void split_words(char (*)[lSize],char *, int *);
 
-char **sortWords(char **,int);
+void sortWords(char (*)[lSize],int);
 
 
 int main()
 {
 	int i;
 	char *str;
-	char **Words = (char **)malloc(20 * sizeof(char*));
-	for(i=0;i<20;i++)
-		*(Words+i)=(char *)malloc(lSize*sizeof(char)); 
+	// char **Words = (char **)malloc(20 * sizeof(char*));
+	// for(i=0;i<20;i++)
+	// 	*(Words+i)=(char *)malloc(lSize*sizeof(char)); 
+
+	char Words[20][lSize];
 
 	int cWords=0;
 	int it;
@@ -31,7 +33,8 @@ int main()
 
 	puts(str);
 
-	Words = split_words(str, &cWords); 
+	// Words = split_words(str, &cWords); 
+	split_words(Words,str,&cWords);
 
 	for(it=0;it<cWords;it++)
 		printf("\n%s",Words[it]);
@@ -48,38 +51,49 @@ int main()
 	return 0;
 }
 
-char **split_words(char *str, int *ptr)
+void split_words(char (*Words)[lSize], char *str, int *ptr)
 {
-	char **splits = NULL;
+	// char **splits = NULL;
+	int i;
+	// char **splits = (char **)malloc(20 * sizeof(char*));
+	// for(i=0;i<20;i++)
+	// 	*(splits+i)=(char *)malloc(lSize*sizeof(char)); 
+
 	char *tokens = strtok(str, ",");
 	int spaces=0;
 	int count = 0;
 
+
+	// for(i=0;i<20;i++)
+	// 	memset(*(splits+i),'\0',lSize); 
+
 	while(tokens)
 	{
 		count++;
-		splits = realloc(splits,sizeof(char *) * ++spaces);
+		// splits = realloc(splits,sizeof(char *) * ++spaces);
+		++spaces;
+		//memset(*(splits+count),'\0',lSize); 
+		// if(!splits)
+		// 	return splits;
 
-		if(!splits)
-			return splits;
-
-		splits[spaces - 1] = tokens;
+		strcpy(Words[spaces - 1], tokens);
 		tokens = strtok(NULL, ",");
 
 	}
 
 	*ptr = count;
 
-	return splits;
+	// return Words;
 
 }
 
 
-char **sortWords(char **Words, int c)
+void sortWords(char (*Words)[lSize], int c)
 {
 	int i,j;
 	int ilen=0;
 	int jlen=0;
+	int it;
 	char *temp = (char *)malloc(lSize);
 	char *str1 = (char *)malloc(lSize);
 	char *str2 = (char *)malloc(lSize);
@@ -90,41 +104,27 @@ char **sortWords(char **Words, int c)
 	{
 		for(j=i;j<c;j++)
 		{
-			// memset(temp,'\0',lSize);
-			printf("\n%s\t%s",Words[i],Words[j]);
+			memset(temp,'\0',lSize);
 			if(strcmp(Words[i],Words[j])>0)
 			{
-				printf("\nInside if st");
+				
 				strcpy(str1, Words[i]);
 				strcpy(str2, Words[j]);
-				memset(Words[i],'\0',lSize);
-				memset(Words[j],'\0',lSize);
 				
-				//strcpy(temp,str1);
+				ilen = strlen(Words[i]);
+				jlen = strlen(Words[j]);
+				memset(Words[i],'\0',ilen);
+				memset(Words[j],'\0',jlen);
+				
+				
 				strcpy(Words[i],str2);
 				strcpy(Words[j],str1);
 				
-				/*
-				ilen = strlen(Words[i]);
-				jlen = strlen(Words[j]);
-				memcpy(temp, Words[i], ilen);
-				temp[ilen] = '\0';
-
-				memcpy(Words[i], Words[j], jlen);
-				Words[jlen] = '\0';
-
-				memcpy(Words[j], temp, strlen(temp));
-				Words[strlen(temp)] = '\0';
-				*/
-				printf("\nWords[i]: %s", Words[i]);
-				printf("\nWords[j]: %s", Words[j]);
-				printf("\ntemp: %s", temp);
-
-				printf("\n=============\n");
+				
 				
 			}
 		}
 	}
 
-	return Words;
+	// return Words;
 }
