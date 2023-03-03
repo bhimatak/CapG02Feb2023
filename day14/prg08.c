@@ -22,8 +22,23 @@ int main()
 
 	int i,j;
 	int **ptr = (int **)malloc(row * sizeof(int*));
-	for(i=0;i<row;i++)
+	// head1-> 12 bytes row1
+	// head2-> 12 bytes row2
+
+	for(i=0;i<row;i++){
+		printf("\nAddress of %d head/row/ptr1 %u",(i+1),&ptr[i]);
 		ptr[i]=(int *)malloc(col*sizeof(int)); 
+
+
+	}
+
+	for(i=0;i<row;i++){
+		for(j=0;j<col;j++)
+		printf("\nelement %d and its address is: %u\n", (i+1),&ptr[i][j]);
+
+	}
+
+
 
 	for(i=0;i<row;i++)
 		for(j=0;j<col;j++)
