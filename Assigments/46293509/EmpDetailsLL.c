@@ -44,9 +44,9 @@ int main()
 	temp = head;
 	while(temp!=NULL)
 	{
-		printf("\nid: %d\n",temp->id);
+		printf("id: %d\n",temp->id);
 		printf("Salary: %.2f\n", temp->salary);
-		printf("\nName: %s\n", temp->name);
+		printf("Name: %s\n", temp->name);
 		temp=temp->next;
 	}
 
