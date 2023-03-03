@@ -5,7 +5,6 @@
 
 int getArrayEl(int *,int);
 int disArray(int *);
-
 int bubbleSort(int *);
 int selectionSort(int *);
 int searchEle(int *);
@@ -14,26 +13,25 @@ int main()
 {
 	int arr[SIZE];
 	int choice,ch=1;
-	disArray(arr);
+	printf("The number of elements acceptsis %d\n",getArrayEl(arr,SIZE));
+	
 	while(ch)
 	{
-		printf("Enter 1 getarray\n 2. display array 3.bubbleSort\n 4.selectionSort \n5.search an element\n");
+		printf(" SELECt \n 1>display array\n 2.bubbleSort\n 3.selectionSort \n 4.search an element\n");
 	        printf("Enter your choice\n");
 		scanf("%d",&choice);
 		switch(choice)
 		{
-			case 1: printf("The number of elements acceptsis %d\n",getArrayEl(arr,SIZE));
+			case 1: disArray(arr);
 				break;
-			case 2: disArray(arr);
+			case 2: bubbleSort(arr);
 				break;
-			case 3: bubbleSort(arr);
+			case 3: selectionSort(arr);
 				break;
-			case 4: selectionSort(arr);
-				break;
-			case 5: searchEle(arr);
+			case 4: searchEle(arr);
 				break;
 			default:printf("Wrong Choice\n");
-				break;
+			return	EXIT_FAILURE;
                  }
 	}
 	printf("Thank you for using Application\n");
@@ -83,6 +81,7 @@ int bubbleSort(int arr[])
 			}
 		}
 	}
+	printf("Elements SORTED\n");
 }
 
 int selectionSort(int arr[])
@@ -94,7 +93,7 @@ int selectionSort(int arr[])
 	for(i=0;i<=SIZE-2;i++)
 	{
 		min=arr[i];
-		pos=1;
+		pos=i;
 		for(j=i+1;j<SIZE;j++)
 		{
 			if(arr[j]<min)
@@ -108,6 +107,7 @@ int selectionSort(int arr[])
 		arr[pos]=help;
 	}
 
+	printf("Elements SORTED\n");
 
 }
 int searchEle(int arr[])
@@ -117,14 +117,17 @@ int searchEle(int arr[])
 	int mid;
 	int low=0;
 	int high=arr[SIZE-1];
+
 	printf("Enter a element to search\n");
 	scanf("%d",&ele);
-	while(low<high)
+
+	while(low<=high)
 	{
 	        mid= (low + high)/2;
 		if(ele==arr[mid])
 		{
-			printf("Elements found @%d\n",i);
+			printf("Elements found @ %d\n",mid);
+			break;
 		}
 		else if(ele>=arr[mid])
 		{
