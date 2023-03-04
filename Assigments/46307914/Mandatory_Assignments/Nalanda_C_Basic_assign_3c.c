@@ -3,9 +3,11 @@
 #include<stdlib.h>
 
 #define MAXLENGTH 80
-//#define MAXLEN 1024
 
 int getFirstNames(char (*)[MAXLENGTH],int, char (*)[MAXLENGTH]);
+
+int	getLastNames(char (*)[MAXLENGTH],int, char (*)[MAXLENGTH]);
+
 int main()
 {	
 	int rowcount=4;
@@ -15,7 +17,7 @@ int main()
 	
 	int n= getFirstNames(arr,rowcount,firstnames);
 	
-//	getLastNames(char arr[][MAX_LEN], int rowcount, char (*lastnames)[MAX_LEN]);
+	getLastNames(arr,rowcount,lastnames);
 
 	return EXIT_SUCCESS;
 
@@ -54,3 +56,4 @@ int getLastNames(char (*arr)(MAXLENGTH), int rowcount, char (*Lastnames)[MAXLENG
 	}
 
 	return EXIT_SUCCESS;
+}
