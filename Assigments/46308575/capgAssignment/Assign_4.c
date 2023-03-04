@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_LINE_LENGTH 256
-#define MAX_NUM_LINES 1000
+#define MAX_LINE_LENGTH 80
+#define MAX_NUM_LINES 80
 
 void read_file(char *filename, char **lines, int *num_lines);
 void write_file(char *filename, char **lines, int num_lines);
