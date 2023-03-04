@@ -25,6 +25,30 @@ DLL *insertEnd(DLL*, DLL*);
 
 int main()
 {
+	DLL *head = NULL; 
+	DLL *temp = NULL;
+
+	int ch=1;
+
+	while(ch)
+	{
+		temp = insertEnd(head, temp);
+		if(head == NULL)
+			head = temp;
+
+
+		printf("\nDo you want to add one more element (1/0): ");
+		scanf("%d",&ch);
+	}
+
+	temp = head;
+
+	dispListF(temp);
+	dispListB(head);
+
+	printf("\n\n");
+
+	return 0;
 
 }
 
@@ -35,6 +59,8 @@ void dispListF(DLL *head)
 	while(head != NULL)
 	{
 		printf("%d->",head->val);
+		if(head->next == NULL)
+			break;
 		head = head->next;
 	}
 	printf("\n==============\n");
@@ -42,13 +68,18 @@ void dispListF(DLL *head)
 
 void dispListB(DLL *head)
 {
-	while(head != NULL)
+	while(head != NULL){
+		if(head->next == NULL)
+			break;
 		head = head->next;
+	}
 	
 	printf("\nList in the backward direction\n");
 	do
 	{
 		printf("%d->",head->val);
+		if(head->prev == NULL)
+			break;
 		head = head->prev;
 	}while(head != NULL);
 
