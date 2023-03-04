@@ -1,16 +1,19 @@
 #include<stdio.h>
+#include<string.h>
 
-void input_func(char []);
-int word_count(char []);
-void single_line_wspace(char []);
-int replacews(char [], char);
-int long_word(char []);
+void input_func(char[]);
+int word_count(char[]);
+void single_line_wspace(char[]);
+int replacews(char[], char);
+int long_word(char[]);
+void substr(char[],char[]);
 
 int main()
 {
 	char str[1024];
 	int nOfWords=0,replacement=0,longword=0;
 	char rep='!';
+	char substring[1024];
 
 	input_func(str);
 	
@@ -21,6 +24,11 @@ int main()
 	longword=long_word(str);
 
 	printf("\n\nThe length of the longest word is %d \n\n",longword);
+
+	printf("\n\nEnter the substring:");
+	fgets(substring,1024,stdin);
+
+	substr(str,substring);
 
 	single_line_wspace(str);
 
@@ -71,7 +79,7 @@ void single_line_wspace(char str[])
 
 	printf("\n\n");
 
-	for(i=0;str[i]!='\n';i++)
+	for(i=0;str[i]!='\0';i++)
 	{
 		if(str[i] == ' ')
 			continue;
@@ -138,5 +146,38 @@ int long_word(char str[])
 		printf("%c",str[j+i]);
 
 	return max;
+
+}
+		
+void substr(char str[], char substring[])
+{
+	char *p;
+	int i=0;
+	int len=strlen(substring); 
+
+	p= strstr(str,substring);
+	
+	if(p)
+	{
+		while(*(p+len+1)!='\n')
+		{
+			*(p)=*(p+len+1);
+
+			p++;
+		}
+		while(*p!='\0')
+		{
+
+			*(p)='\0';
+			p++;
+		}
+
+		printf("\n\n%s\n\n",str);
+	}
+
+	else
+	{
+		printf("\n\nNo substring found!!\n\n");
+	}
 
 }
