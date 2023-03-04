@@ -17,43 +17,86 @@ int main()
 	
 	int n= getFirstNames(arr,rowcount,firstnames);
 	
-	getLastNames(arr,rowcount,lastnames);
+	int k= getLastNames(arr,rowcount,lastnames);
 
 	return EXIT_SUCCESS;
 
 }
 
-int getFirstNames(char (*arr)(MAXLENGTH), int rowcount, char (*firstnames)[MAXLENGTH])
+int getFirstNames(char (*arr)[MAXLENGTH], int rowcount, char (*firstnames)[MAXLENGTH])
+{
+	int i=0;
+	char *tokens;
+	for(i=0;i<rowcount;i++)
+	{
+		
+		tokens=strtok(arr[i],":");	
+		if(tokens == NULL)
+			return EXIT_FAILURE;
+		strcpy(firstnames[i],tokens);
+		tokens=strtok(NULL,":");
+		printf("\n%d.%s\n\n",i,tokens);
+		//strcpy(firstnames[i],tokens);
+	}
+	printf("\n\nFirst Names:\n");
+	for(i=0;i<rowcount;i++)
+	{
+		printf("\n%s\n",firstnames[i]);
+	}
+	printf("\n");
+
+	return EXIT_SUCCESS;
+}
+
+int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*lastnames)[MAXLENGTH])
+{
+	int i=0;
+	printf("\ncheck1\n");
+	char *tokens;
+
+	for(i=0;i<rowcount;i++)
+	{
+	printf("\nChgeck2\n");
+		
+		tokens=strtok(arr[i],":");
+		printf("\n%s\n",tokens);
+		printf("\ncheck3\n");
+		if(tokens == NULL)
+			return EXIT_FAILURE;
+		printf("\nCheck4\n");
+		tokens=strtok(NULL,":");
+		printf("\ncheck5\n");
+		//strcpy(lastnames[i],tokens);
+		printf("\nCheck 6\n");
+		printf("\n%d.%s\n\n",i,tokens);
+	}
+	printf("\n\nlast Names:\n");
+	for(i=0;i<rowcount;i++)
+	{
+		printf("\n%s\n",lastnames[i]);
+	}
+	printf("\n");
+
+	return EXIT_SUCCESS;
+/*int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*lastnames)[MAXLENGTH])
 {
 	int i=0;
 	char *tokens;
 	for(i=0;i<rowcount;i++)
 	{
 		tokens=strtok(arr[i],":");		
-		strcpy(firstnames[i],tokens);
+	//	if(tokens == NULL)
+	//		return EXIT_FAILURE;
+		tokens=strtok(NULL,":");
+		//strcpy(lastnames[i],tokens);
+		printf("\n%s\n",tokens);
 	}
+	printf("\n\nLast names:\n");
 	for(i=0;i<rowcount;i++)
 	{
-		printf("\n%s\n",firstnames[i]);
+		printf("\n%s\n",lastnames[i]);
 	}
+	printf("\n");
 
-	return EXIT_SUCCESS;
-}
-
-int getLastNames(char (*arr)(MAXLENGTH), int rowcount, char (*Lastnames)[MAXLENGTH])
-{
-	istnt i=0;
-	char *tokens;
-	for(i=0;i<rowcount;i++)
-	{
-		tokens=strtok(arr[i],":");		
-		tokens=strtok(NULL,'\0');
-		strcpy(Lastnames[i],tokens);
-	}
-	for(i=0;i<rowcount;i++)
-	{
-		printf("\n%s\n",Lastnames[i]);
-	}
-
-	return EXIT_SUCCESS;
+	return EXIT_SUCCESS;*/
 }
