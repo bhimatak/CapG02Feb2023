@@ -29,7 +29,7 @@ int getFirstNames(char arr[][MAXLENGTH], int rowcount, char (*firstnames)[MAXLEN
     
 	int i=0;
 	char *tokens;
-	char **temp = (char *)malloc(rowcount*sizeof(char*));
+	char **temp = (char **)malloc(rowcount*sizeof(char*));
 	for(i=0;i<rowcount;i++)
 	{
 	    temp[i] =(char *)malloc(1024);
@@ -58,7 +58,7 @@ int getLastNames(char arr[][MAXLENGTH], int rowcount, char (*Lastnames)[MAXLENGT
 {
 	int i=0;
 	char *tokens;
-    char **temp = (char *)malloc(rowcount*sizeof(char*));
+    char **temp = (char **)malloc(rowcount*sizeof(char*));
 	for(i=0;i<rowcount;i++)
 	{
 	    temp[i] =(char *)malloc(1024);
