@@ -1,16 +1,17 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#define MAXLEN  80
+
+#define MAXLENGTH 80
 //#define MAXLEN 1024
 
-int getFirstNames(char (*)[MAXLEN],int, char (*)[MAXLEN]);
+int getFirstNames(char (*)[MAXLENGTH],int, char (*)[MAXLENGTH]);
 int main()
 {	
 	int rowcount=4;
-	char arr[][MAXLEN]={"Antony:Joseph","Lata:Mary","Rajesh:Kumar","Joly:Akbar"};
-	char firstnames[rowcount][MAXLEN];
-	char lastnames[rowcount][MAXLEN];
+	char arr[][MAXLENGTH]={"Antony:Joseph","Lata:Mary","Rajesh:Kumar","Joly:Akbar"};
+	char firstnames[rowcount][MAXLENGTH];
+	char lastnames[rowcount][MAXLENGTH];
 	
 	int n= getFirstNames(arr,rowcount,firstnames);
 	
@@ -20,14 +21,13 @@ int main()
 
 }
 
-int getFirstNames(char (*arr)(MAXLEN), int rowcount, char (*firstnames)[MAXLEN])
+int getFirstNames(char (*arr)(MAXLENGTH), int rowcount, char (*firstnames)[MAXLENGTH])
 {
 	int i=0;
 	char *tokens;
 	for(i=0;i<rowcount;i++)
 	{
-		tokens=strtok(arr[i],":");
-		tokens=strtok(NULL,":");
+		tokens=strtok(arr[i],":");		
 		strcpy(firstnames[i],tokens);
 	}
 	for(i=0;i<rowcount;i++)
@@ -37,3 +37,20 @@ int getFirstNames(char (*arr)(MAXLEN), int rowcount, char (*firstnames)[MAXLEN])
 
 	return EXIT_SUCCESS;
 }
+
+int getLastNames(char (*arr)(MAXLENGTH), int rowcount, char (*Lastnames)[MAXLENGTH])
+{
+	istnt i=0;
+	char *tokens;
+	for(i=0;i<rowcount;i++)
+	{
+		tokens=strtok(arr[i],":");		
+		tokens=strtok(NULL,'\0');
+		strcpy(Lastnames[i],tokens);
+	}
+	for(i=0;i<rowcount;i++)
+	{
+		printf("\n%s\n",Lastnames[i]);
+	}
+
+	return EXIT_SUCCESS;
