@@ -13,7 +13,8 @@ void display(char (*)[MAX_LENGTH], int);
 int main()
 {
     int choice, index;
-    char ch, str[MAX_LENGTH];
+    char ch, str1[MAX_LENGTH];
+	char str2[MAX_LENGTH];
     char arr[][MAX_LENGTH] = {"user1", "user2", "user3", "user4"};
 
     do {
@@ -28,15 +29,18 @@ int main()
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
-        switch (choice) {
+        switch (choice) 
+		{
             case 1:
                 printf("Enter index of element to swap with first element: ");
                 scanf("%d", &index);
-                if (index >= 0 && index < sizeof(arr) / sizeof(arr[0])) {
-                    char *result = swap_elements(arr, index);
+                if (index > 0 && index <= 4)
+				{
+                    char *result = swap_elements(arr, index-1);
                     printf("Result: %s\n", result);
                 }
-                else {
+                else
+				{
                     printf("Invalid index\n");
                 }
                 break;
@@ -44,10 +48,13 @@ int main()
             case 2:
                 printf("Enter character to test: ");
                 scanf(" %c", &ch);
-                if (isVowel(ch) == EXIT_SUCCESS) {
+
+                if (isVowel(ch) == EXIT_SUCCESS)
+				{
                     printf("%c is a vowel\n", ch);
                 }
-                else {
+                else
+				{
                     printf("%c is not a vowel\n", ch);
                 }
                 break;
@@ -55,21 +62,24 @@ int main()
             case 3:
                 printf("Enter index of string to remove vowels: ");
                 scanf("%d", &index);
-                if (index >= 0 && index < sizeof(arr) / sizeof(arr[0])) {
-                    char *result = remove_vowel(arr, index);
+                if (index > 0 && index < 5) 
+				{
+                    char *result = remove_vowel(arr, index-1);
                     printf("Result: %s\n", result);
                 }
-                else {
+                else
+				{
                     printf("Invalid index\n");
-                    break;
                 }
+				 break;
+
             case 4:
                 printf("Enter string 1: ");
-                scanf("%s", str);
+                scanf("%s", str1);
                 printf("Enter string 2: ");
-                scanf("%s", arr[0]);
-                char *result = mystrcat(str, arr[0]);
-                printf("Result: %s\n", str);
+                scanf("%s", str2);
+               	char *ptr = mystrcat(str1,str2);
+                printf("Result: %s\n", str1);
                 break;
 
             case 5:
@@ -111,16 +121,20 @@ int isVowel(char ch) {
 
 char *remove_vowel(char (*arr)[MAX_LENGTH], int index)
 {
-    int i, j;
-    for (i = 0, j = 0; arr[index][i] != '\0'; i++) 
+    int i, j,len;
+	len=strlen(arr[index]);
+
+    for (i = 0,j=0; i<len; i++) 
     {
-        if (!isVowel(arr[index][i]))
-        {
-            arr[index][j] = arr[index][i];
-            j++;
-        }
-    }
+	 	if (isVowel(arr[index][i]))
+       	{
+           	arr[index][j] = arr[index][i];
+           	j++;
+       	}
+	}
+    
     arr[index][j] = '\0';
+
     return arr[index];
 }
 
