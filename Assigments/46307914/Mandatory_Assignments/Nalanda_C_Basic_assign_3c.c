@@ -15,9 +15,9 @@ int main()
 	char firstnames[rowcount][MAXLENGTH];
 	char lastnames[rowcount][MAXLENGTH];
 	
-	int n= getFirstNames(arr,rowcount,firstnames);
+	getFirstNames(arr,rowcount,firstnames);
 	
-	int k= getLastNames(arr,rowcount,lastnames);
+	getLastNames(arr,rowcount,lastnames);
 
 	return EXIT_SUCCESS;
 
@@ -34,11 +34,10 @@ int getFirstNames(char (*arr)[MAXLENGTH], int rowcount, char (*firstnames)[MAXLE
 		if(tokens == NULL)
 			return EXIT_FAILURE;
 		strcpy(firstnames[i],tokens);
-		tokens=strtok(NULL,":");
-		printf("\n%d.%s\n\n",i,tokens);
-		//strcpy(firstnames[i],tokens);
 	}
+
 	printf("\n\nFirst Names:\n");
+	
 	for(i=0;i<rowcount;i++)
 	{
 		printf("\n%s\n",firstnames[i]);
@@ -48,61 +47,26 @@ int getFirstNames(char (*arr)[MAXLENGTH], int rowcount, char (*firstnames)[MAXLE
 	return EXIT_SUCCESS;
 }
 
-<<<<<<< HEAD
-int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*lastnames)[MAXLENGTH])
-{
-	int i=0;
-	printf("\ncheck1\n");
-=======
 int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*Lastnames)[MAXLENGTH])
 {
 	int i=0;
->>>>>>> 6bffd904cabc0de5ac5c28b094d9f79741d60309
+
 	char *tokens;
 
 	for(i=0;i<rowcount;i++)
 	{
-	printf("\nChgeck2\n");
-		
 		tokens=strtok(arr[i],":");
-		printf("\n%s\n",tokens);
-		printf("\ncheck3\n");
 		if(tokens == NULL)
 			return EXIT_FAILURE;
-		printf("\nCheck4\n");
 		tokens=strtok(NULL,":");
-		printf("\ncheck5\n");
-		//strcpy(lastnames[i],tokens);
-		printf("\nCheck 6\n");
-		printf("\n%d.%s\n\n",i,tokens);
+		strcpy(Lastnames[i],tokens);
 	}
 	printf("\n\nlast Names:\n");
 	for(i=0;i<rowcount;i++)
 	{
-		printf("\n%s\n",lastnames[i]);
+		printf("\n%s\n",Lastnames[i]);
 	}
 	printf("\n");
 
 	return EXIT_SUCCESS;
-/*int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*lastnames)[MAXLENGTH])
-{
-	int i=0;
-	char *tokens;
-	for(i=0;i<rowcount;i++)
-	{
-		tokens=strtok(arr[i],":");		
-	//	if(tokens == NULL)
-	//		return EXIT_FAILURE;
-		tokens=strtok(NULL,":");
-		//strcpy(lastnames[i],tokens);
-		printf("\n%s\n",tokens);
-	}
-	printf("\n\nLast names:\n");
-	for(i=0;i<rowcount;i++)
-	{
-		printf("\n%s\n",lastnames[i]);
-	}
-	printf("\n");
-
-	return EXIT_SUCCESS;*/
 }
