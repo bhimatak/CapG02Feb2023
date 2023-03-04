@@ -4,62 +4,17 @@
 
 #define MAX_LENGTH 20
 
-char arr[][MAX_LENGTH] = {"user1", "user2", "user3", "user4"};
+char *swap_elements(char (*)[MAX_LENGTH], int);
+int isVowel(char);
+char *remove_vowel(char (*)[MAX_LENGTH], int);
+char *mystrcat(char *, char *);
+void display(char (*)[MAX_LENGTH], int);
 
-char *swap_elements(char (*arr)[MAX_LENGTH], int index) {
-    char temp[MAX_LENGTH];
-    strcpy(temp, arr[0]);
-    strcpy(arr[0], arr[index]);
-    strcpy(arr[index], temp);
-    return arr[index];
-}
-
-int isVowel(char ch) {
-    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
-        ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
-        return EXIT_SUCCESS;
-    }
-    else {
-        return EXIT_FAILURE;
-    }
-}
-
-char *remove_vowel(char (*arr)[MAX_LENGTH], int index) {
-    int i, j;
-    for (i = 0, j = 0; arr[index][i] != '\0'; i++) {
-        if (!isVowel(arr[index][i])) {
-            arr[index][j] = arr[index][i];
-            j++;
-        }
-    }
-    arr[index][j] = '\0';
-    return arr[index];
-}
-
-char *mystrcat(char *s1, char *s2) {
-    while (*s1 != '\0') {
-        s1++;
-    }
-    while (*s2 != '\0') {
-        *s1 = *s2;
-        s1++;
-        s2++;
-    }
-    *s1 = '\0';
-    return s1;
-}
-
-void display(char (*arr)[MAX_LENGTH], int size) {
-    int i;
-    for (i = 0; i < size; i++) {
-        printf("%s ", arr[i]);
-    }
-    printf("\n");
-}
-
-int main() {
+int main()
+{
     int choice, index;
     char ch, str[MAX_LENGTH];
+    char arr[][MAX_LENGTH] = {"user1", "user2", "user3", "user4"};
 
     do {
         printf("\nMenu:\n");
@@ -133,3 +88,66 @@ int main() {
 
     return 0;
 }
+
+char *swap_elements(char (*arr)[MAX_LENGTH], int index)
+{
+    char temp[MAX_LENGTH];
+    strcpy(temp, arr[0]);
+    strcpy(arr[0], arr[index]);
+    strcpy(arr[index], temp);
+    return arr[index];
+}
+
+int isVowel(char ch) {
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+        ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') 
+    {
+        return EXIT_SUCCESS;
+    }
+    else {
+        return EXIT_FAILURE;
+    }
+}
+
+char *remove_vowel(char (*arr)[MAX_LENGTH], int index)
+{
+    int i, j;
+    for (i = 0, j = 0; arr[index][i] != '\0'; i++) 
+    {
+        if (!isVowel(arr[index][i]))
+        {
+            arr[index][j] = arr[index][i];
+            j++;
+        }
+    }
+    arr[index][j] = '\0';
+    return arr[index];
+}
+
+char *mystrcat(char *s1, char *s2) 
+{
+    while (*s1 != '\0') 
+    {
+        s1++;
+    }
+    while (*s2 != '\0') 
+    {
+        *s1 = *s2;
+        s1++;
+        s2++;
+    }
+    *s1 = '\0';
+    return s1;
+}
+
+void display(char (*arr)[MAX_LENGTH], int size) 
+{
+    int i;
+    for (i = 0; i < size; i++) 
+    {
+        printf("%s ", arr[i]);
+    }
+    printf("\n");
+}
+
+
