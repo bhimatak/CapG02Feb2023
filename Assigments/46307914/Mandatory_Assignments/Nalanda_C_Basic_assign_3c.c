@@ -23,7 +23,7 @@ int main()
 
 }
 
-int getFirstNames(char (*arr)(MAXLENGTH), int rowcount, char (*firstnames)[MAXLENGTH])
+int getFirstNames(char (*arr)[MAXLENGTH], int rowcount, char (*firstnames)[MAXLENGTH])
 {
 	int i=0;
 	char *tokens;
@@ -40,9 +40,9 @@ int getFirstNames(char (*arr)(MAXLENGTH), int rowcount, char (*firstnames)[MAXLE
 	return EXIT_SUCCESS;
 }
 
-int getLastNames(char (*arr)(MAXLENGTH), int rowcount, char (*Lastnames)[MAXLENGTH])
+int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*Lastnames)[MAXLENGTH])
 {
-	istnt i=0;
+	int i=0;
 	char *tokens;
 	for(i=0;i<rowcount;i++)
 	{
