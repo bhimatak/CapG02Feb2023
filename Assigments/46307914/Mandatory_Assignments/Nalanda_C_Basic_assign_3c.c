@@ -48,10 +48,16 @@ int getFirstNames(char (*arr)[MAXLENGTH], int rowcount, char (*firstnames)[MAXLE
 	return EXIT_SUCCESS;
 }
 
+<<<<<<< HEAD
 int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*lastnames)[MAXLENGTH])
 {
 	int i=0;
 	printf("\ncheck1\n");
+=======
+int getLastNames(char (*arr)[MAXLENGTH], int rowcount, char (*Lastnames)[MAXLENGTH])
+{
+	int i=0;
+>>>>>>> 6bffd904cabc0de5ac5c28b094d9f79741d60309
 	char *tokens;
 
 	for(i=0;i<rowcount;i++)
