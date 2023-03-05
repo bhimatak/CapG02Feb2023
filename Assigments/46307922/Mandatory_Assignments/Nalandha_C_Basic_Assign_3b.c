@@ -4,6 +4,12 @@
 
 #define MAX_LENGTH 20
 
+char *swap_elements(char (*)[MAX_LENGTH], int);
+int isVowel(char);
+char *remove_vowel(char (*)[MAX_LENGTH], int);
+char *mystrcat(char *, char *);
+void display(char (*)[MAX_LENGTH], int);
+
 char arr[][MAX_LENGTH] = {"user1", "user2", "user3", "user4"};
 
 char *swap_elements(char (*arr)[MAX_LENGTH], int index) {
@@ -25,14 +31,21 @@ int isVowel(char ch) {
 }
 
 char *remove_vowel(char (*arr)[MAX_LENGTH], int index) {
-    int i, j;
-    for (i = 0, j = 0; arr[index][i] != '\0'; i++) {
-        if (!isVowel(arr[index][i])) {
-            arr[index][j] = arr[index][i];
-            j++;
-        }
-    }
+	
+    int i, j,len;
+    len=strlen(arr[index]);
+
+    for (i = 0,j=0; i<len; i++) 
+    {
+	 	if (isVowel(arr[index][i]))
+       	{
+           	arr[index][j] = arr[index][i];
+           	j++;
+       	}
+	}
+    
     arr[index][j] = '\0';
+
     return arr[index];
 }
 
