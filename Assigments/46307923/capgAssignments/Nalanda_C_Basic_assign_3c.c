@@ -16,9 +16,7 @@ int main()
 	char lastnames[rowcount][MAXLENGTH];
 	
 	getFirstNames(arr,rowcount,firstnames);
-	
-	getLastNames(arr,rowcount,lastnames);
-	
+	getLastNames(arr,rowcount,lastnames);	
 	
 	return EXIT_SUCCESS;
 
@@ -69,7 +67,9 @@ int getLastNames(char arr[][MAXLENGTH], int rowcount, char (*Lastnames)[MAXLENGT
 	{
 		tokens=strtok(temp[i],":");
 		if(tokens == NULL)
+		{
 			return EXIT_FAILURE;
+		}
 		tokens=strtok(NULL,":");
 		strcpy(Lastnames[i],tokens);
 	}
