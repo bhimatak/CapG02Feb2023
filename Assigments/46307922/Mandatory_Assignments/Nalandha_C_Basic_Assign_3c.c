@@ -6,7 +6,7 @@
 
 int getFirstNames(char [][MAXLENGTH],int, char (*)[MAXLENGTH]);
 
-int	getLastNames(char [][MAXLENGTH],int, char (*)[MAXLENGTH]);
+int getLastNames(char [][MAXLENGTH],int, char (*)[MAXLENGTH]);
 
 int main()
 {	
@@ -44,7 +44,7 @@ int getFirstNames(char arr[][MAXLENGTH], int rowcount, char (*firstnames)[MAXLEN
 	}
 
 	printf("\n\nFirst Names:\n");
-	printf("\n<==============>\n");
+	printf("\n<------------>\n");
 	
 	for(i=0;i<rowcount;i++)
 	{
@@ -75,7 +75,7 @@ int getLastNames(char arr[][MAXLENGTH], int rowcount, char (*Lastnames)[MAXLENGT
 	}
 	
 	printf("\n\nlast Names:\n");
-	printf("\n<==============>\n");
+	printf("\n<------------>\n");
 	for(i=0;i<rowcount;i++)
 	{
 		printf("\n%s\n",Lastnames[i]);
