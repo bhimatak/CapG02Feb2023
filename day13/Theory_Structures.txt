@@ -1,0 +1,129 @@
+Structures
+user defined datatype
+
+syntax:
+
+struct tagName
+{
+	declare members of the structure	
+};
+
+ex:
+   struct Employee
+   {
+   		char empName[100];
+   		long int empID;
+   		long int empphone;
+   		char empAddress[1024];
+   		char empGender;
+   		float empSalary;
+   };
+
+  => text segment
+
+
+
+  int a = 10;
+  int a,b,c;
+
+Syntax:
+	struct tagName vName;
+
+
+  struct Employee emp; // => emp is the variable of struct Employee type
+
+  struct Employee emp1, emp2, emp3;
+
+
+  struct Employee
+   {
+   		char empName[100];
+   		long int empID;
+   		long int empphone;
+   		char empAddress[1024];
+   		char empGender;
+   		float empSalary;
+   }emp1,emp2;
+
+
+
+   typedef => keyword
+
+   typedef struct Employee EMP;
+
+   EMP e1,e2,e3;
+
+
+   typedef struct Employee
+   {
+   		char empName[100];
+   		long int empID;
+   		long int empphone;
+   		char empAddress[1024];
+   		char empGender;
+   		float empSalary;
+   }EMP;
+
+   EMP e1, e2;
+
+
+   int a, b;
+
+   a = 10;
+
+   printf("\na=%d",a); => value @ that address is printed => 10
+
+   . => dot operator, we can access the members of the structure
+   ex: EMP e1,e2;
+
+   strcpy(e1.empName,"Bhima");
+   e1.empID = 10001;
+
+
+   -> => arrow operator access the members of the structure (if the structure variable is declared using a pointer) 
+
+   ex: 
+   	EMP *e1; 
+
+   	e1->empID = 2002;
+
+
+
+   int a=10,b;
+
+   b = a;
+
+
+   e2 = e1; //invalid using asssignement op
+
+   e2.empID = e1.empID; // valid
+
+
+
+int func1(int);
+int callByRef(int )
+
+main()
+{
+	int a=10;  2000
+	func1(a); //call by value
+	printf("\na=%d",a); => 10
+	callByRef(&a);
+	printf("\na=%d",a); => 20
+}	
+
+
+func1 => sf=> local x = 10
+
+int func1(int x) // 3000 = 20
+{
+	printf("%d",x);
+	x = 20;
+}
+
+int callByRef(int *y) => y local ptr to this SF y = BA of a
+{
+	printf("\n%d", *y);
+	*y = 20; //co(2000) = 20
+
+}
