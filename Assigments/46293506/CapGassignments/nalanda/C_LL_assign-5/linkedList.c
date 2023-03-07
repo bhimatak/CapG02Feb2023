@@ -35,10 +35,12 @@ int main()
 	return 0;
 }
 
-WORD *getWord(WORD *temp,WORD *head,char word)
+WORD *getWord(WORD *temp,WORD *head)
 {
 	WORD *newnode;
 	char *token;
+	temp =NULL;
+	head =NULL;
 	
 	char word[1024];
 	FILE *filename;
@@ -59,8 +61,13 @@ WORD *getWord(WORD *temp,WORD *head,char word)
 		exit(EXIT_FAILURE);
 	}
 	fgets(word,1024,filename);
-        puts(word);
+       
 	token = strtok(word," ");
+	while(token!=NULL)
+	{
+		token = strtok(NULL," ");
+	}
+	puts(token);
 	strcpy(newnode->word,token);
 	newnode->nlink = NULL;
 
