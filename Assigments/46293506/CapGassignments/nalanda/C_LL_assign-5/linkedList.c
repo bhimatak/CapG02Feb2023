@@ -1,108 +1,90 @@
 #include<stdio.h>
-#include<string.h>
 #include<stdlib.h>
-#include<ctype.h>
+#include<string.h>
 
-struct word
+struct node
 {
 	char word[20];
-	struct word *nlink;
+	struct node *next;
 };
-typedef struct word WORD;
+typedef struct node WD;
 
-WORD *getWord(WORD *,WORD *);
-void displayList(WORD *);
-
+WD *insert(WD *);
+void display(WD *);
 int main()
 {
-
-	int ch1=1;
-        WORD *head=NULL;
-        WORD *temp=NULL;
-	while(ch1)
+	WD *temp =NULL;
+	WD *head =NULL;
+        int ch =1;
+	while(ch)
 	{
-		temp=getWord(temp,head);
+		temp =insert(temp);
 		if(head==NULL)
-			head=temp;
-		printf("do you want add more\n");
-		scanf("%d",&ch1);
+			head =temp;
 
+		printf("word inserted\n");
+		printf("\n do you want continue :");
+		scanf("%d",&ch);
 	}
-	temp =head;
-	displayList(temp);
-		
-
+	display(head);
 	return 0;
 }
-
-WORD *getWord(WORD *temp,WORD *head)
+char getWord()
 {
-	WORD *newnode;
-	char *token;
-	temp =NULL;
-	head =NULL;
-	
-	char word[1024];
+	char word[20];
 	FILE *filename;
-
-	filename =fopen("file.txt","r+");
+	filename = fopen("file.c","r");
+	if(filename==NULL)
+	{
+		perror("Failed open file\n");
+		exit(EXIT_FAILURE);
+	}
+	while(fgets(word,"%s",word))
+}
+WD *insert(WD *temp)
+{
+	char word[20];
+	WD *newnode;
+	FILE *filename;
+	filename = fopen("file.txt","r");
+	if(filename ==NULL)
+	{
+		perror("File fail to open\n");
+		exit(EXIT_FAILURE);
+	}
 	
-	if(filename == NULL)
+	newnode = (WD *)malloc(sizeof(WD));
+
+	if(newnode == NULL)
 	{
-		perror("file not opening\n");
+		perror("Malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	printf("File Opened Successully\n");
-	newnode = (WORD *)malloc(sizeof(WORD));
+        fgets(word,1024,filename);
 
-	if(newnode ==NULL)
-	{
-		perror("Malloc Failed\n");
-		exit(EXIT_FAILURE);
-	}
-	fgets(word,1024,filename);
-       
-	token = strtok(word," ");
-	while(token!=NULL)
-	{
-		token = strtok(NULL," ");
-	}
-	puts(token);
-	strcpy(newnode->word,token);
-	newnode->nlink = NULL;
+	strcpy(newnode->word,word);
+	newnode->next = NULL;
 
-	if(head==NULL)
+	if(temp == NULL)
 	{
-		head = newnode;
 		temp = newnode;
 	}
 	else
 	{
-		temp->nlink = newnode;
-		temp = temp->nlink;
+		temp->next =newnode;
+		temp = temp->next;
 	}
-	printf("Word added\n");
-
 	return temp;
 }
 
-void displayList(WORD *temp)
+void display(WD *temp)
 {
-	if(temp == NULL)
+	while(temp!=NULL)
 	{
-		printf("List is Empty\n");
-		exit(EXIT_FAILURE);
+		printf("%s ",temp->word);
+		if(temp->next == NULL)
+			break;
+		temp = temp->next;
 	}
-	else
-	{
-		printf("Words are\n");
-		while(temp!=NULL)
-		{
-			printf("%s ",temp->word);
-			if(temp->nlink==NULL)
-				break;
-			temp = temp->nlink;
-		}
-	}
+	printf("\n");
 }
-
