@@ -62,12 +62,12 @@ int main()
 	for(i=0;i<(sizeof(a)/sizeof(a[0]));i++)
 		root = insert(root,a[i]);
 
-	// printf("\n===Inorder Traversal\n====");
-	// inorder(root);
-	// 50,20,80,
-	// printf("\n===Preorder Traversal\n====");
-	// preorder(root);
-	//
+	printf("\n===Inorder Traversal\n====");
+	inorder(root);
+	
+	printf("\n===Preorder Traversal\n====");
+	preorder(root);
+	
 	printf("\n===Postorder Traversal\n====");
 	postorder(root);
 
