@@ -1,7 +1,7 @@
 #include<stdio.h> 
 int main()
 {
-        int fact=1;
+        long double fact=1;
         int count,num;
         printf("Enter a number:");
         scanf("%d",&num);
@@ -9,7 +9,7 @@ int main()
         {
                 fact = fact * count;
         }
-        printf("factorial of %d is :%d \n",num,fact);
+        printf("factorial of %d is :%Lf\n",num,fact);
         return 0;
 }
 
