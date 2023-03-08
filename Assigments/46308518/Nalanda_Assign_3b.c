@@ -5,7 +5,7 @@
 #define MAX_LEN 20
 
 
-	char arr[][MAX_LEN]={"Ramesh","Sourav,"Suresh","Gaurav"};
+	char arr[][MAX_LEN]={"user1","user2","user3","user4"};
 	char* swap_elements(char arr1[][MAX_LEN], int index)
 	{
          	char temp[20];
