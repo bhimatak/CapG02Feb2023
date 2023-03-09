@@ -62,7 +62,7 @@ int main() {
     char ch, str[MAX_LENGTH];
 
     do {
-        printf("\nMenu:\n");
+        printf("\nChoice:\n");
         printf("1. Swap elements\n");
         printf("2. Check if a character is a vowel\n");
         printf("3. Remove vowels from string\n");
