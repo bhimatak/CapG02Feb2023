@@ -1,23 +1,47 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 
 int copyChar(char *,char *);
+void display(char *);
+int conCat(char *,char *);
+int getString(char *);
+
+char src[20];
 
 int main()
 {
-	char src[20];
 	char dest[20];
 	int i;
+	int ch;
+	printf("\n enter \n 1.copy characters from one array another");
+	printf("\n 2.concatenate Two Strings\n 3.EXIT\n choice:");
+	scanf("%d",&ch);
+	switch(ch)
+	{
+		case 1:getString(src);
+		       copyChar(src,dest);
+		       break;
+		case 2:getString(src);
+		       getString(dest);
+		       conCat(src,dest);
+		       display(src);
+		       break;
+		case 3:exit(EXIT_FAILURE);
+		default: printf("\nWrong Choice");
+	}
+	return 0;
+}
+
+int getString(char *src)
+{
 	printf("Enter a string\n");
 	scanf("%s",src);
-	copyChar(src,dest);
-	for(i=0;i<strlen(src);i++)
-	{
-		printf("%c",*(dest + i));
-	}
-	printf("\n\n");
+}
 
-	return 0;
+void display(char *arr)
+{
+	printf("%s",src);
 }
 
 int copyChar(char *src,char *dest)
@@ -28,5 +52,14 @@ int copyChar(char *src,char *dest)
 	{
 		*(dest+i) =*(src+i);
 	}
+	printf("Characters Copied\n");
 }
 
+int conCat(char *src,char *dest)
+{
+	int i;
+	for(i=0;i<strlen(src);i++)
+	{
+		strcat((dest+i),(src+i));
+	}
+}
