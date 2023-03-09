@@ -27,8 +27,8 @@ int main()
 	// findEven(start,end);
 	// findOdd(start,end);
 
-	fPtr[0] = findOdd;
-	fPtr[1] = findEven;
+	fPtr[0] = &findOdd;
+	fPtr[1] = &findEven;
 
 	Result1 = (*fPtr[0])(start,end);
 	Result2 = (*fPtr[1])(start,end);
