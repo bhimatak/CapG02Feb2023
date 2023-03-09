@@ -24,14 +24,14 @@ int main(int argc, char **argv)
 		printf("\nError occured while reading data or writing it to the double char pointer!");
 	}
 	printf("\n-----------Displaying the contents stored in the double char pointer---------------");
-	/*display();*/
+	display();
 	return EXIT_SUCCESS;
 }
 
 int getFileStrings(char *filename)
 {
 	FILE *fptr;
-	char line[BUFF];
+	char line[1024];
 	int i;
 
 	fptr = fopen(filename,"r");
@@ -43,17 +43,17 @@ int getFileStrings(char *filename)
 	{
 		ll++;
 	}
-	printf("\n%d\n",ll);
-	ll++;
 	rewind(fptr);
 	str = (char **)malloc(ll*sizeof(char *));
 	for(i=0;i<ll;i++)
 	{
 		str[i] = (char *)malloc(BUFF*sizeof(char));
 	}
+	i = 0;
 	while(fgets(line,BUFF,fptr)!=NULL) 
 	{
 		strcpy(str[i],line);
+		i++;
 	}
 	fclose(fptr);
 	return EXIT_SUCCESS;
@@ -62,7 +62,7 @@ void display()
 {
 	int i;
 
-	for(i=0;str[i]!=NULL;i++)
+	for(i=0;i < ll;i++)
 	{
 		printf("\n%s\n",str[i]);
 	}
