@@ -21,7 +21,7 @@ void* isPalindrome(void* args) {
 
 int main(int argc, char* argv[])
  {
-    if (argc < 2) {
+    if (argc < 3) {
         printf("Please enter minimum of 2 words as arguments.\n");
         return 1;
     }
@@ -32,7 +32,6 @@ int main(int argc, char* argv[])
     
     for (i = 0; i < argc-1; i++) {
         if (pthread_create(&threads[i], NULL, isPalindrome, argv[i+1]) != 0) {
-            printf("Failed to create thread %d.\n", i+1);
             return 1;
         }
     }
@@ -45,3 +44,4 @@ int main(int argc, char* argv[])
     
     return 0;
 }
+
