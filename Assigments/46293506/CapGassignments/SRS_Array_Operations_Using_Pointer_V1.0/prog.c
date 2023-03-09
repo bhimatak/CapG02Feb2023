@@ -7,11 +7,11 @@ void display(char *);
 int conCat(char *,char *);
 int getString(char *);
 
-char src[20];
+char src[1024];
 
 int main()
 {
-	char dest[20];
+	char dest[1024];
 	int i;
 	int ch;
 	printf("\n enter \n 1.copy characters from one array another");
@@ -21,6 +21,7 @@ int main()
 	{
 		case 1:getString(src);
 		       copyChar(src,dest);
+		       display(dest);
 		       break;
 		case 2:getString(src);
 		       getString(dest);
@@ -42,6 +43,7 @@ int getString(char *src)
 void display(char *arr)
 {
 	printf("%s",src);
+	printf("\n");
 }
 
 int copyChar(char *src,char *dest)
@@ -58,8 +60,13 @@ int copyChar(char *src,char *dest)
 int conCat(char *src,char *dest)
 {
 	int i;
-	for(i=0;i<strlen(src);i++)
+	int len =strlen(src);
+	int j=0;
+	for(i=len;dest[j]!='\0';i++)
 	{
-		strcat((dest+i),(src+i));
+                *(src + i) = *(dest+j);
+		j++;
 	}
+	printf("String Concatenated \n");
+
 }
