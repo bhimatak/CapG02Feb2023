@@ -1,0 +1,10 @@
+1. A computer is an electronic machine.
+2. Computer was invented by Charles Babbage.
+3. The CPU (Central Processing Unit) is called the brain of the computer.
+4. The first computer in the world was named ENIAC.
+5. Computer work can be done in an easy and short time.
+6. All the work that appears on the computer is done by the operating system.
+7. Where the language of the computer is known as binary code which is 0 and 1.
+8. All the data of the computer is located on the hard disk.
+9. The process of running a computer is called boot up.
+10. Today computers are used in every field.
