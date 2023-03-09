@@ -22,14 +22,14 @@ void *findEven(void *vargs)
 	start = ptr->start;
 	end = ptr->end;
 
-	printf("\n%lld \n%lld\n",ptr->start,ptr->end);
+	// printf("\n%lld \n%lld\n",ptr->start,ptr->end);
 	for(i = start;i<=end;i++)
 	{
 		if((i & 1) == 0)
 		{
 			sumEven += i;
-			printf("\nEven");
-			sleep(1);
+			// printf("\nEven");
+			// sleep(1);
 		}
 
 	}
@@ -47,14 +47,14 @@ void *findOdd(void *vargs)
 	start = ptr->start;
 	end = ptr->end;
 
-	printf("\n%lld \n%lld\n",ptr->start,ptr->end);
+	// printf("\n%lld \n%lld\n",ptr->start,ptr->end);
 	for(i = start;i<=end;i++)
 	{
 		if((i & 1) == 1)
 		{
 			sumOdd += i;
-			printf("\nOdd");
-			sleep(1);
+			// printf("\nOdd");
+			// sleep(1);
 		}
 
 	}
@@ -78,7 +78,7 @@ int main()
 	char name[20] = "Bhima";
 	struct varg arg;
 
-	pthread_t tid1, tid2;
+	pthread_t tid1, tid2,tid3,tid4;
 
 	// arg.a = 101;
 	// arg.b = 201;
@@ -89,6 +89,12 @@ int main()
 	// pthread_create(&tid, NULL, func,&arg);
 	pthread_create(&tid1, NULL, findEven,&arg);
 	pthread_create(&tid2, NULL, findOdd,&arg);
+	pthread_create(&tid3, NULL, findEven,&arg);
+	pthread_create(&tid4, NULL, findOdd,&arg);
+	pthread_join(tid1,NULL);
+	pthread_join(tid2,NULL);
+	pthread_join(tid4,NULL);
+	pthread_join(tid3,NULL);
 
 	// printf("\nSum Even = %lld\n",sumEven);
 	pthread_exit(NULL);
