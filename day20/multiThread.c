@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef unsigned long long ULL;
 
@@ -28,7 +29,9 @@ void findOdd(ULL start, ULL end)
 		if((i & 1) == 1)
 		{
 			sumOdd += i;
+			sleep(1);
 		}
+
 	}
 }
 
@@ -40,6 +43,7 @@ void findEven(ULL start, ULL end)
 		if((i & 1) == 0)
 		{
 			sumEven += i;
+			sleep(1);
 		}
 	}
 }
