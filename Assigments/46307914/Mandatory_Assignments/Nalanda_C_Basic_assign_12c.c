@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include <string.h>
 
-int count = 0;   
+int countPal = 0;   
 
 void* checkPalindrome(void* args)
 {
@@ -18,7 +18,7 @@ void* checkPalindrome(void* args)
         
     }
     printf("\n%s is a palindrome word",word);
-    count++;
+    countPal++;
     return NULL;
 }
 
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     if (argc < 3)
     {
         printf("Please enter minimum of 2 words as arguments.\n");
-        return 1;
+        return EXIT_FAILURE;
     }
     
     pthread_t td[argc-1];
@@ -46,11 +46,11 @@ int main(int argc, char* argv[])
     	pthread_join(td[i], NULL);
     }
     
-    if(count<1)
+    if(countPal<1)
       printf("\n\nThere are no palindromes present in the given input!!\n\n");
       
     else
-      printf("\n\nTotal number of palindromes: %d\n", count);
+      printf("\n\nTotal number of palindromes: %d\n", countPal);
     
-    return 0;
+    return EXIT_SUCCESS;
 }
