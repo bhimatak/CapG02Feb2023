@@ -29,7 +29,7 @@ void findOdd(ULL start, ULL end)
 		if((i & 1) == 1)
 		{
 			sumOdd += i;
-			sleep(1);
+			// sleep(1);
 		}
 
 	}
@@ -43,7 +43,7 @@ void findEven(ULL start, ULL end)
 		if((i & 1) == 0)
 		{
 			sumEven += i;
-			sleep(1);
+			// sleep(1);
 		}
 	}
 }
