@@ -26,11 +26,15 @@ int main()
 	}
 
 	pthread_create(&thread1,NULL,updatedetails,&empl[1]);
-	pthread_create(&thread2,NULL,readdetails,&empl[1]);
+	pthread_create(&thread1,NULL,readdetails,&empl[1]);
 
+	pthread_create(&thread2,NULL,updatedetails,&empl[0]);
+	pthread_create(&thread2,NULL,readdetails,&empl[0]);
+	
 	pthread_join(thread1,NULL);
 	pthread_join(thread2,NULL);
 
+	
 	pthread_mutex_destroy(&lock);
 	pthread_exit(NULL);
 
