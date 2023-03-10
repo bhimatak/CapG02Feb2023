@@ -11,7 +11,6 @@ void searchandreplace(char **, char *,char *);
 int main()
 {
 	char text[MAXSIZE];
-	char **wordlist;
 	char sword[20];
 	char rword[20];
 
@@ -59,7 +58,7 @@ void countstring(char *txt)
 
 void wordsstored(char **words,char *text)
 {
-	int i=0,j=0;
+	int i=0;
 	char *text1=(char *)malloc(MAXSIZE);
 	strcpy(text1,text);
 	char *token=strtok(text1," ");
