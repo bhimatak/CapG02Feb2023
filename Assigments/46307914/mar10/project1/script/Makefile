@@ -11,14 +11,14 @@ LIB = ./lib
 IFLAGS= -I $(INC)
 
 PROJECT1 : $(OBJ)/mainProg.o $(OBJ)/myFunctions.o
-	$(CC) $(LDFLAGS) $(BIN)/PROJECT1 $(OBJ)/mainProg.o $(OBJ)/myFunctions.o
+	$(CC) $(LDFLAGS) $(BIN)/PROJECT1 $(OBJ)/mainProg.o -pthread $(OBJ)/myFunctions.o -pthread
 
 $(OBJ)/mainProg.o : $(SRC)/mainProg.c
-	$(CC) $(CFLAGS) $(SRC)/mainProg.c $(IFLAGS)
+	$(CC) $(CFLAGS) $(SRC)/mainProg.c -pthread $(IFLAGS) 
 	mv *.o $(OBJ)/
 
 $(OBJ)/myFunctions.o : $(SRC)/myFunctions.c
-	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS)
+	$(CC) $(CFLAGS) $(SRC)/myFunctions.c $(IFLAGS) -pthread
 	mv *.o $(OBJ)/
 
 clean:

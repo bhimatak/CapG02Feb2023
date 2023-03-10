@@ -1,5 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
 #include<myHeader.h>
 
 int inputEmployee()
@@ -128,3 +126,49 @@ void searchEmployee(EMP *employe,int n,int uid)
 	if(flag!=1)
 		printf("\nNo employee Found with the given EmpID!!\n\n");
 }
+
+
+/*void *updatedetails(void *vargs)
+{
+	EMP *ptr=(EMP *)vargs;
+
+			printf("\nbefore updation\n\n");		
+			printf("\nEmployee ID: ");
+			printf("%d",ptr->uid);
+			printf("\nEmployee Name: ");
+			printf("%s",ptr->name);
+			printf("\nEmployee age: ");
+			printf("%d",ptr->age);
+			printf("\nEmployee sex (M/F/O): ");
+			printf(" %c",ptr->sex);
+			printf("\nEmployee salary: ");
+			printf("%lf\n",ptr->salary);
+
+	strcpy(ptr->name,"Boooooooo");
+			printf("\nAfter updation\n\n");
+			printf("\nEmployee ID: ");
+			printf("%d",ptr->uid);
+			printf("\nEmployee Name: ");
+			printf("%s",ptr->name);
+			printf("\nEmployee age: ");
+			printf("%d",ptr->age);
+			printf("\nEmployee sex (M/F/O): ");
+			printf(" %c",ptr->sex);
+			printf("\nEmployee salary: ");
+			printf("%lf\n",ptr->salary);
+}
+void *readdetails(void *vargs)
+{
+	EMP *ptr=(EMP *)vargs;
+			printf("\n\nAfter reading\n");
+			printf("\nEmployee ID: ");
+			printf("%d",ptr->uid);
+			printf("\nEmployee Name: ");
+			printf("%s",ptr->name);
+			printf("\nEmployee age: ");
+			printf("%d",ptr->age);
+			printf("\nEmployee sex (M/F/O): ");
+			printf(" %c",ptr->sex);
+			printf("\nEmployee salary: ");
+			printf("%lf\n",ptr->salary);
+}*/
