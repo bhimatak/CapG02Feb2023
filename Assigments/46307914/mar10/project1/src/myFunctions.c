@@ -90,15 +90,41 @@ void bubbleSorting(EMP *employe,int n)
 	{
 		printf("\nEmployee ID: ");
 		printf("%d",employe[i].uid);
-		printf("\nEnter Name: ");
+		printf("\nEmployee Name: ");
 		printf("%s",employe[i].name);
-		printf("\nEnter age: ");
+		printf("\nEmployee age: ");
 		printf("%d",employe[i].age);
-		printf("\nEnter sex (M/F/O): ");
+		printf("\nEmployee sex (M/F/O): ");
 		printf(" %c",employe[i].sex);
-		printf("\nEnter salary: ");
+		printf("\nEmployee salary: ");
 		printf("%lf\n",employe[i].salary);
 		
 	}
 	printf("\n\n");
+}
+
+void searchEmployee(EMP *employe,int n,int uid)
+{
+	int i=0,flag=0;
+	for(i=0;i<n;i++)
+	{
+		if(employe[i].uid==uid)
+		{
+			printf("\nThe employee found!!");		
+			printf("\nEmployee ID: ");
+			printf("%d",employe[i].uid);
+			printf("\nEmployee Name: ");
+			printf("%s",employe[i].name);
+			printf("\nEmployee age: ");
+			printf("%d",employe[i].age);
+			printf("\nEmployee sex (M/F/O): ");
+			printf(" %c",employe[i].sex);
+			printf("\nEmployee salary: ");
+			printf("%lf\n",employe[i].salary);
+			flag=1;
+			break;
+		}
+	}
+	if(flag!=1)
+		printf("\nNo employee Found with the given EmpID!!\n\n");
 }

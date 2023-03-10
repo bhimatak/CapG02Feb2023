@@ -15,6 +15,6 @@ typedef struct employee EMP;
 int inputEmployee();
 void fileToStruct(EMP *, int);
 void bubbleSorting(EMP *, int);
-
+void searchEmployee(EMP *,int,int);
 #endif
 
