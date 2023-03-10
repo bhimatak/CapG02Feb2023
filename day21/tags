@@ -1,0 +1,13 @@
+MmultiThread1	multiThread1.c	/^int main()$/
+Mthread1	thread1.c	/^int main()$/
+ULL	multiThread1.c	6
+display	thread1.c	/^void *display(void *ptr)$/
+end	multiThread1.c	10
+findEven	multiThread1.c	/^void *findEven(void *vargs)$/
+findOdd	multiThread1.c	/^void *findOdd(void *vargs)$/
+func	multiThread1.c	/^void *func(void *vargs)$/
+lock	multiThread1.c	16
+start	multiThread1.c	9
+sumEven	multiThread1.c	15
+sumOdd	multiThread1.c	14
+varg	multiThread1.c	7

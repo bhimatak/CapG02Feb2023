@@ -1,0 +1,6 @@
+Q. 
+1. to get the details of the 10 Employees using functions and store in the file.
+2. read the contents of the file of all the records of the emplyee ans store in a DS.
+3. Apply sorting and searching functionalties on the stored data.
+4. update a record in the stored info by using two threads for read and write to that record. use here mutex for thread sync.
+
