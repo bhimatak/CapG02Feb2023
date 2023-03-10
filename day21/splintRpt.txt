@@ -1,0 +1,17 @@
+prg02.c: (in function main)
+prg02.c:28:13: Function memset expects arg 2 to be int gets char: '\0'
+  A character constant is used as an int. Use +charintliteral to allow
+  character constants to be used as ints.  (This is safe since the actual type
+  of a char constant is int.)
+prg02.c:28:9: Possibly null storage str passed as non-null param:
+                 memset (str, ...)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (Use -nullpass to inhibit warning)
+   prg02.c:27:14: Storage str may become null
+prg02.c:6:6: Function exported but not used outside prg02: conv2Str
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   prg02.c:24:1: Definition of conv2Str
+
