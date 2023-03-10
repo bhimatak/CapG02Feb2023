@@ -8,8 +8,8 @@ int main()
 	n=inputEmployee();
 	EMP *empl = (EMP *) malloc ( n * sizeof(EMP));
 	
-	void fileToStruct(empl,n);
-
+	fileToStruct(empl,n);
+	bubbleSorting(empl,n);
 	return EXIT_SUCCESS;
 }
 

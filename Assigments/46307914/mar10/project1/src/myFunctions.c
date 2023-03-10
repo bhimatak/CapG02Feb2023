@@ -17,18 +17,18 @@ int inputEmployee()
 		printf("\nError in opening the file!\n");
 		exit(1);
 	}
-
+	printf("\n\n");
 	for(i=0;i<n;i++)
 	{
 		printf("\nEmployee %d:\n",i+1);
-		printf("Enter ID: ");
+		printf("\nEnter ID: ");
 		scanf("%d",&uid);
 		printf("\nEnter Name: ");
 		scanf("%s",name);
 		printf("\nEnter age: ");
 		scanf("%d",&age);
 		printf("\nEnter sex (M/F/O): ");
-		scanf("%*c",&sex);
+		scanf(" %c",&sex);
 		printf("\nEnter salary: ");
 		scanf("%lf",&salary);
 
@@ -51,7 +51,54 @@ void fileToStruct(EMP *employe,int n)
 
 	while(fscanf(fp,"%d\t%s\t%d\t%c\t%lf\n",&employe[i].uid,employe[i].name,&employe[i].age,&employe[i].sex,&employe[i].salary)==5)
 	{
+		
+		/*printf("Employee ID: ");
+		printf("%d",employe[i].uid);
+		printf("\nEnter Name: ");
+		printf("%s",employe[i].name);
+		printf("\nEnter age: ");
+		printf("%d",employe[i].age);
+		printf("\nEnter sex (M/F/O): ");
+		printf(" %c",employe[i].sex);
+		printf("\nEnter salary: ");
+		printf("%lf",employe[i].salary);
+		*/
 		i++;
 	}
 	fclose(fp);
+}
+
+void bubbleSorting(EMP *employe,int n)
+{
+	EMP temp;
+	int i=0,j=0;
+
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-i-1;j++)
+		{
+			if(employe[j].uid > employe[j+1].uid)
+			{
+				temp=employe[j];
+				employe[j]=employe[j+1];
+				employe[j+1]=temp;
+			}
+		}
+	}
+	printf("\n\n");
+	for(i=0;i<n;i++)
+	{
+		printf("\nEmployee ID: ");
+		printf("%d",employe[i].uid);
+		printf("\nEnter Name: ");
+		printf("%s",employe[i].name);
+		printf("\nEnter age: ");
+		printf("%d",employe[i].age);
+		printf("\nEnter sex (M/F/O): ");
+		printf(" %c",employe[i].sex);
+		printf("\nEnter salary: ");
+		printf("%lf\n",employe[i].salary);
+		
+	}
+	printf("\n\n");
 }
