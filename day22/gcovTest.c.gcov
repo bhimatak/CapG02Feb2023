@@ -1,0 +1,24 @@
+        -:    0:Source:gcovTest.c
+        -:    0:Graph:gcovTest.gcno
+        -:    0:Data:gcovTest.gcda
+        -:    0:Runs:4
+        -:    1:#include <stdio.h>
+        -:    2:
+        4:    3:int main()
+        -:    4:{
+        -:    5:
+        4:    6:	int x=0;
+        4:    7:	printf("\nEnter x value: ");
+        4:    8:	scanf("%d",&x);
+        -:    9:
+        4:   10:	if(x < 20)
+        1:   11:		printf("\nx is less than 20");
+        3:   12:	else if(x < 40)
+        1:   13:		printf("\nx is less than 40");
+        -:   14:	else
+        2:   15:		printf("\nx is greater than 40");
+        -:   16:
+        4:   17:	printf("\n\n");
+        -:   18:
+        4:   19:	return 0;
+        -:   20:}
