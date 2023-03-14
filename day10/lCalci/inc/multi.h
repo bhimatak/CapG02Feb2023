@@ -1,0 +1,1 @@
+int prod(int, int);
