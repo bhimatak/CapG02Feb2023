@@ -92,8 +92,12 @@ int replacews(char str[], char rep)
 	{
 		if(str[i]==' ')
 		{
-			str[i]=rep;
+			printf("!");
 			count++;
+			continue;
+		}
+		else{
+			printf("%c",str[i]);
 		}
 	}
 
